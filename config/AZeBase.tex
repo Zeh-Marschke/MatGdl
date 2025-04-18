@@ -1,0 +1,93 @@
+%% =============================================================================
+%% AZeBase
+%% Grundlegende Festlegungen für LaTeX-Datei für Artikel, Report und
+%% Buch
+%% -----------------------------------------------------------------------------
+%% AZeRahmen, Version 3.0.01 - 2025-01-25
+%% =============================================================================
+
+%% -- KOMA-spezifische Pakete einbinden ----------------------------------------
+\usepackage{scrhack}          % beseitigt Inkompatibilitäten in KOMA-Script
+
+\usepackage{typearea}         % Paket von KOMA-Script, ermöglicht Veränderung
+                              %   vom Papierformat (Satzspiegelberechnung)
+							  
+\usepackage[T1]{fontenc}      % Kodierung der Schrift
+\usepackage[utf8]{inputenc}   % Eingabezeichensatz
+
+\usepackage[ngerman]{babel}   % Spracheinstellung
+
+\usepackage{lmodern}          % verwendete Schriftart
+
+\usepackage{graphicx}         % Einbinden von Grafiken
+
+\usepackage{ifthen}           % Verwendung Boolescher Steuerung
+
+\usepackage{tikz}             % Grafiken erstellen
+
+\usepackage{xcolor}           % Farben
+
+\usepackage[babel]{csquotes}  % automatische Anführungszeichen (Biber ?)
+\usepackage{varioref}         % automatische Seitenangabe bei Querverweisen
+
+\usepackage{mdwlist}          % engere Aufzählungen und Nummerierungen
+
+\usepackage{lastpage}         % Nummer der letzten Seite
+
+\usepackage{eurosym}          % Euro-Symbol
+
+\usepackage[locale=DE]{siunitx}    
+                              % Ausgabe von physikalischen Größen
+							  
+\usepackage[                  %% Hyperlinks
+   breaklinks=true      % Links »überstehen« Zeilenumbruch 
+     ,colorlinks        % Links erhalten Farben statt Kästen 
+     ,linkcolor=black   % beeinflusst Inhaltsverzeichnis und Seitenzahlen 
+     ,urlcolor=blue     % Farbe für URLs 
+     ,citecolor=blue    % Farbe für Verweise auf Literatur 
+     ,bookmarks         % Erzeugung von Bookmarks für PDF-Viewer 
+     ,bookmarksnumbered % Nummerierung der Bookmarks 
+]{hyperref} 
+
+\usepackage[
+  backend=biber               % Biber statt BibTeX verwenden
+]{biblatex}
+
+\usepackage{listings}         % Listings von Quellcode
+
+% -- neue Packages, Bedeutung noch genauer ergründen und beschreiben
+\usepackage{morewrites}       % ermöglicht mehr writes, 
+                              % da ansonsten auf 16 beschränkt
+\usepackage{subcaption}       % Tabellen und Grafiken nebeneinander
+\usepackage{longtable}        % Tabellen über Seitengrenze
+\usepackage{csvsimple}        % einlesen von Daten aus CSV-Datei
+\usepackage{booktabs}         % Gestaltung Tabellen (toprule, midrule, ...)
+\usepackage[figuresright]{rotating}
+                              % Grafiken (auch Tabellen rotieren ???)
+\usepackage{multirow}         % spaltenübergreifende Tabelleneinträge
+\usepackage[makeindex, split, useindex]{splitidx}  
+                              % Erstellen von Indizes
+\newindex[Stichwortverzeichnis]{idx}
+\ifthenelse{\equal{\INDEXNAMEN}{JA}}
+  { \newindex[Namensverzeichnis]{names} }{ }  
+\ifthenelse{\equal{\INDEXABKUERZUNGEN}{JA}}
+  { \newindex[Abkürzungsverzeichnis]{abbr} }{ }  
+\usepackage[font=it,labelfont=bf,format=plain]{caption}
+                              % Bedeutung nicht ganz klar
+                              % Formatierung von Bildunterschriften / Tabellenüberschriften ???
+                              
+\parindent = 0.0cm            % Einzug bei Absatzanfang
+
+\addbibresource{\BIBLIOTHEK}
+
+% Listings als Gleitobjekt definieren
+% \usepackage{tocbasic} ist in scrartcl und scrbook (auch in scrreport?)
+% enthalten
+\DeclareNewTOC[
+    type = listing
+  , float
+  , listname = {Liste der Listings}
+]{listings}
+
+\input{./config/AZeMath.tex}
+\input{./config/AZePers.tex}

@@ -1,0 +1,70 @@
+%% =============================================================================
+%% Mathematik
+%% Kapitel 07 - Homomorphismen
+%% Andreas Zeh-Marschke
+%% =============================================================================
+
+\chapter{Strukturen und strukturerhaltende Abbildungen}
+\label{cha:Gdl-K07-Homomorphismen}
+
+Dieses Kapitel ist wieder eher informeller Art. Strukturen und 
+strukturerhaltende Abbildungen sind wichtig, allgemeine Begriffe in der 
+Mathematik. Es gibt vielfältige Arten von Strukturen: Gruppen, Ringe, Körper,
+Vektorräume, Verbände, Graphen um nur einige wenige Beispiele zu nennen.
+
+%% -----------------------------------------------------------------------------
+\begin{unitAnmerkung}[Strukturen]
+Auf Mengen werden oftmals Operatoren definiert, Das sind Abbildungen von 
+Elementen der Menge auf andere Elemente der Menge. Das kann die Addition von 
+zwei natürlichen Zahlen sein, deren Ergebnis wieder eine natürliche Zahl ist.
+Das kann die skalare Multiplikation eines Vektors sein. Das Ergebnis ist wieder
+ein Vektor. Ebenso kann es Relationen geben. Beispielsweise die 
+Kleiner-Relation $<$ bei den natürlichen Zahlen. Genauso gibt es spezielle
+Konstanten in den Mengen. Beispielsweise die $0$ bei den reellen Zahlen als
+das neutrale Element bei der Addition oder die $1$ als neutrales Element der
+Multiplikation.
+
+Eine Menge mit Operationen, Relationen und Konstanten nennt man eine 
+\Begriff{Struktur}. Es gibt viele Strukturen, die klar definiert werden. Es 
+kann auch verschiedene Mengen geben, welche die selbe Struktur haben. Die
+Untersuchung der Strukturen und die dabei gewonnenen Erkenntnisse gelten dann 
+für alle Mengen mit derselben Struktur. 
+\end{unitAnmerkung}
+
+%% -----------------------------------------------------------------------------
+\begin{unitAnmerkung}[Unterstrukturen]
+Es sei $M$ eine Menge mit einer Strukturen. Das bedeutet, eine Menge mit 
+Operationenn $f_i$, mit Relationen $R_j$ und Konstanten $C_k$. Ist die 
+Teilmenge $U \subseteq M$ bezüglich der Operationen abgeschlossen und besitzt 
+sie dieselben Konstanten wie $M$, dann ist $U$ eine \Begriff{Unterstruktur} 
+von $M$. Für die Relationen gibt es keine weitere Anforderung. 
+\end{unitAnmerkung}
+
+%% -----------------------------------------------------------------------------
+\begin{unitAnmerkung}[Homomorphismen]
+Es seien für $n = 1,2$ $M_n$ Strukturen  mit Operationen $f_n,i$, Relationen 
+$R_n,j$ und Konstanten $C_n,k$. Die Anzahl der Operationen, die Anzahl der
+Relationen und die Anzahl der Konstanten sei dabei identisch, genauso die 
+Stelligkeit der Operationen und Relationen. Eine Abbildung $\phi$ von $M_1$ 
+nach $M_2$ heißt ein \Begriff{Homomorphismus}, wenn für alle Operationen, 
+Relationen und Konstanten gilt:
+\begin{align}
+  &\phi(f_{1,i}(a_1, \ldots, a_{m_i}) 
+  = f_{2,i}(\phi(a_1), \ldots , \phi(a_{m_i}) \ ,\\
+  &\phi(R_{1,j}(b_1, \ldots, b_{l_j}) 
+  = R_2,j(\phi(b_1), \ldots , \phi(b_{l_j}) \ \text{und}\\
+  &\phi(C_{1,p}) = C_{2,p}\ .
+\end{align}
+Die Operationen, Relationen und Konstanten werden durch die Abbildung $\Phi$
+übertragen, so dass diese weiterhin gültig sind.
+
+Ist die Abbildung injektiv, dann heißt die Abbildung ein 
+\Begriff{Monomophismus}.
+Ist die Abbildung surjektiv, dann heißt die Abbildung ein 
+\Begriff{Epimophismus}.
+Ist die Abbildung bijektiv, dann heißt die Abbildung ein 
+\Begriff{Isomophismus}.
+
+Ist $M_1 = M_2$, dann heißt die Abbildung ein \Begriff{Endomophismus}.
+Ein bijektiver Endomorphismus heißt \Begriff{Automorphismus}
+\end{unitAnmerkung}

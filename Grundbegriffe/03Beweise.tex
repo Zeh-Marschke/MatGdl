@@ -1,0 +1,288 @@
+%% =============================================================================
+%% Mathematische Grundlagen - Grundbegriffe
+%% Kapitel 03 - Beweise
+%% Autor: Andreas Zeh-Marschke
+%% Datum: 2025-03-07
+%% =============================================================================
+
+\chapter{Beweisverfahren}
+\label{cha:Gdl-K03-Beweise}
+
+%\begin{unit}
+In diesem Kapitel werden verschiedene Beweisverfahren vorgestellt und an 
+ersten kleinen Beispielen demonstriert. Im weiteren Verlauf wird das eine oder
+andere Verfahren eingesetzt. 
+
+Unter einem \Begriff{Beweis} wird die Ableitung einer Aussage aus anderen 
+Aussagen nach bestimmten, logischen Schlussregeln verstanden. Es werden hier 
+einige der Beweisverfahren an konkreten Beispielen betrachtet. Ziel eines 
+Beweises ist es immer, aus einer Menge von wahren Aussagen durch logische
+Schlussfolgerungen eine Behauptung zu bestätigen. 
+
+%\end{unit}
+\Translation{Beweis}{proof}
+
+%%------------------------------------------------------------------------------
+\section{Gegenbeispiel}
+\label{sec:Beweis - Beweisverfahren}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Gegenbeispiel]
+Nicht jede Behauptung ist wahr. Die Anführung eines einzigen 
+\Begriff{Gegenbeispiel}es ist eine Möglichkeit, eine Behauptung zu widerlegen. 
+Eine Möglichkeit, die immer erwägt werden sollte. Für die 
+Widerlegung einer Aussage genügt ein einziges Gegenbeispiel. Für einen Beweis 
+einer Aussage reichen auch viele Beispiele nicht. 
+\end{Unit}
+\Translation{Gegenbeispiel}{counterexample}
+
+%%------------------------------------------------------------------------------
+\begin{Unit}[Beispiele] \ 
+
+\begin{enumerate}
+\item Die Behauptung, dass alle Primzahlen ungerade Zahlen sind ist schnell 
+  widerlegt. Das Gegenbeispiel der Primzahl 2 reicht aus. 
+\item Auch die Behauptung, dass alle ungeraden Zahlen Primzahlen sind, ist 
+  durch das Beispiel 1 oder durch das Beispiel 9 oder durch das Beispiel 121 
+  schnell widerlegt.
+\item Die Goldbachsche Vermutung\footnote{ 
+  \url{https://de.wikipedia.org/wiki/Goldbachsche_Vermutung}, benannt nach
+  Christian Goldbach\index[names]{Goldbach, Christian} (1690-1764),
+  deutscher Mathematiker,
+  (\url{https://de.wikipedia.org/wiki/Christian_Goldbach)}} 
+  dass jede gerade Zahl größer als 2 als Summe von zwei Primzahlen 
+  geschrieben werden kann, ist bis $4 \cdot 10^{18}$ als richtig 
+  nachgerechnet worden. Das sind sehr viele Beispiele, aber kein Beweis.
+\end{enumerate}
+\end{Unit}
+\Translation{Goldbachsche Vermutung}{Goldbach's conjecture}
+
+%%------------------------------------------------------------------------------
+\section{Vollständiges Durchrechnen}
+\label{sec:Beweis - Durchrechnen}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Vollständiges Durchrechnen]
+Ebenfalls eine einfache Möglichkeit ist das \Begriff{vollständige Durchrechnen} 
+\index{Durchrechnen, vollständig} aller Fälle. Dies ist jedoch nur dann 
+möglich, wenn es endlich viele Fälle gibt. Es ist nur dann wirklich einfach, 
+wenn die Anzahl der möglichen Fälle klein ist. Im Abschnitt 
+\ref{cha:Gdl-K02-ElemLogik} wurden einige Beweise dadurch geführt. Mit dem 
+Aufkommen der Computer sind derartige Beweise verstärkt aufgekommen. Ein 
+berühmtes Beispiel ist der Beweis des Vier-Farben-Problem\footnote{
+  Vier-Farben-Theorem (\url{https://de.wikipedia.org/wiki/Vier-Farben-Satz}): 
+  Wie viele Farben reichen aus, um eine beliebige Karte so einzufärben, dass 
+  je zwei aneinander grenzende Länder unterschiedliche Farben haben? Diese 
+  Problem wurde von Francis Guthrie\index[names]{Guthrie, Francis} (1831-1899),
+  englischer Mathematiker 
+  (\url{https://de.wikipedia.org/wiki/Francis_Guthrie}), 1852 formuliert. Erst 
+  1977 gelangen Kenneth Appel\index[names]{Appel, Kenneth} (1932-2013),
+  US-amerikanischer Mathematiker
+  (\url{https://de.wikipedia.org/wiki/Kenneth_Appel}) und Wolfgang Haken
+  \index[names]{Haken, Kenneth} (1928-2022), deutsch-US-amerikanischer 
+  Mathematiker (\url{https://de.wikipedia.org/wiki/Wolfgang_Haken}) mit Hilfe 
+  eines Computerprogrammes der Beweis.}, 
+das mit Hilfe der Reduzierung auf endliche viele Untersuchungsfälle und dem
+anschließenden Durchrechnen mittels eines Computerprogramms gelöst wurde.
+\end{Unit}
+\Translation{Vollständiges Durchrechnen}{brute force method}
+\Translation{Vier-Farben-Satz}{four-colour-theorem}
+
+%%------------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+
+Das Aufstellen der Wahrheitstafel bei der elementaren Logik ist ein Beispiel
+für das vollständige durchrechnen. Es wurden jeweils alle möglichen Belegungen 
+der Aussagen mit den Wahrheitswerten berechnet.
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+\section{Direkter Beweis}
+\label{sec:Beweis - direkt}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Direkter Beweis]
+Beim \Begriff{direkten Beweis}\index{Beweis, direkt} wird eine Aussage aus 
+einer wahren Aussage durch direkte logische Schlussregeln hergeleitet. Als 
+Basis dient hierbei der Satz zum modus ponens.
+\begin{align}
+  ((A \rightarrow B) \land A) \rightarrow B
+\end{align}
+\end{Unit}
+\Translation{direkter Beweis}{direct proof}
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+\label{bsp:Aus-DirekterBeweis}
+
+\textbf{Behauptung}: Es sei $n$ eine ungerade natürliche Zahl, dann ist auch 
+$n^2$ eine ungerade Zahl. Hierbei sei \enquote{$n$ ist ungerade} die Aussage 
+$A$ und \enquote{$n^2$ ist ungerade} die Aussage $B$.
+
+\textbf{Beweis}: Da $n$ eine ungerade natürliche Zahl ist, existiert eine Zahl 
+$k\ (\in \NN_0)$, mit $n=2k+1$. Damit gilt 
+\begin{align}
+  n^2 = (2k+1)^2 = 4k^2+4k+1 = 2(2k^2+2k)+1 \quad .
+\end{align}
+Somit ist auch $n^2$ eine ungerade Zahl. \qed
+
+Damit wurde die Aussage direkt bewiesen.
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+\section{Indirekter Beweis}
+\label{sec:Beweis - indirekt}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Indirekter Beweis]
+Der \Begriff{indirekten Beweis}\index{Beweis, indirekt} basiert auf dem 
+Kontrapositionssatz, der folgenden Äquivalenz:
+\begin{align}
+  (A \rightarrow B) \leftrightarrow (\neg B \rightarrow \neg A) 
+\end{align}
+Es wird somit von der Negation der Aussage $B$ ausgegangen und daraus die 
+Negation der Aussage $A$ bewiesen. Auf Grund der Äquivalenz wird die Aussage
+damit indirekt bewiesen. \vspace*{0.5ex}
+\end{Unit}
+\Translation{indirekter Beweis}{proof by contraposition infers}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+\label{bsp:Aus-IndirekterBeweis}
+
+\textbf{Behauptung}: Ist $n^2$ eine gerade Zahl, dann ist auch $n$ eine gerade 
+Zahl.
+
+\textbf{Beweis}: $A$ sei die Aussage \enquote{$n^2$ ist gerade}, $B$ sei die 
+Aussage \enquote{$n$ ist eine gerade Zahl}. Die Negation zu $B$ ist die Aussage 
+\enquote{$n$ ist ungerade}. Beim Beispiel \ref{bsp:Aus-DirekterBeweis} zum 
+direkten Beweis wurde gezeigt, dass dann $n^2$ eine ungerade Zahl ist, dies 
+ist die Negation von $A$. Aus der Negation von $B$ folgt die Negation von $A$, 
+damit folgt aus $A$ die Aussage $B$. \qed
+
+Damit wurde die Aussage indirekt bewiesen.
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+\section{Beweis durch Widerspruch}
+\label{sec:Beweis - Widerspruch}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beweis durch Widerspruch]
+Dieser Beweis basiert auf dem Satz zum modus tollens.
+\begin{align}
+  (A \rightarrow B) \land \neg B \rightarrow \neg A
+\end{align}
+Wenn aus der Aussage $A$ die Aussage $B$ folgt, jedoch die Negation von $B$ 
+wahr ist, dann kann die Aussage $A$ nicht wahr sein, denn ansonsten würde auch 
+die Aussage $B$ wahr sein, was ein Widerspruch darstellt. Somit ist die 
+Negation von $A$ wahr. Somit ist es der \Begriff{Beweis durch Widerspruch}. 
+\end{Unit}
+\Translation{Beweis durch Widerspruch}{proof by contradiction}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Ein schon über 2000 Jahre alter Beweis durch Widerspruch.
+
+\Begriff{Behauptung}: $\sqrt{2}$ ist irrational. \\
+\Begriff{Beweis}: 
+Angenommen $\sqrt{2}$ ist eine rationale Zahl. Dann gibt es teilerfremde, 
+natürliche Zahlen $p$ und $q$, so dass $\sqrt{2} = \frac{p}{q}$ gilt. 
+Damit ergibt sich $2q^2 = p^2$. Damit ist $p^2$ gerade und damit auch 
+$p$ (siehe Beispiel \ref{bsp:Aus-IndirekterBeweis} zum indirekten Beweis). 
+Somit gibt es eine Zahl $k$, so dass  $p=2k$ gilt. 
+Eingesetzt in die Gleichung ergibt sich $2q^2 = 4k^2$. Durch 2 kürzen ergibt 
+$q^2 = 2k^2$. 
+Damit ist $q^2$ gerade und somit auch $q$. 
+Dies widerspricht jedoch der Annahme, dass $p$ und $q$ teilerfremd sind, also 
+ist die Annahme, dass $\sqrt{2}$ rational ist falsch! 
+\vspace*{0.5ex} 
+\qed
+
+Damit wurde die Aussage, dass $\sqrt{2}$ irrational ist, durch Widerspruch
+bewiesen.
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+\section{Vollständige Induktion}
+\label{sec:Beweis - Induktion}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz zu vollständigen Induktion]
+Beim Beweis durch \Begriff{vollständige Induktion}\index{Induktion, 
+vollständige} wird eine Aussage der Form $\forall$n $\in\ \mg{N}: A(n)$
+bewiesen, indem zuerst die Aussage für $n = 1$ bewiesen wird 
+(Induktionsbeginn oder Induktionsverankerung). In der Induktionsannahme wird
+angenommen, dass $A(n)$ für ein $n \in \NN$ gilt. Im Induktionsschritt von 
+$n$ auf $n+1$ wird die Aussage $A(n+1)$, basierend auf der Aussage $A(n)$ 
+bewiesen: ($A(n)$ $\rightarrow$ $A(n+1)$). Durch wiederholte Anwendung des 
+Satzes des modus ponens gilt $A(n)$ für alle $n\ \in\ \mg{N}$. 
+
+\begin{Satz}
+Gilt die Aussage $A(0)$ und gilt $\forall n \in \NN: A(n) \rightarrow A(n+1)$,
+dann ist $A(n)$ für alle $n \in \NN$ wahr.
+\end{Satz}
+
+Manchmal wird nicht bei $n = 0$ oder $n = 1$ begonnen, sondern bei einem 
+höheren Wert. Auch wird beim Induktionsschritt manchmal nicht nur $A(n)$,
+sondern auch $A(n-1), A(n-2), \ldots$ verwendet.
+\end{Unit}
+\Translation{vollständige Induktion}{mathematical induction}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+\ 
+
+\textbf{Behauptung}:
+\begin{align}
+  \forall n\in \mg{N}:\ \sum_{i=1}^n i = \frac{n(n+1)}{2}
+\end{align}
+\textbf{Beweis}: Die Aussage A(n) ist für $n \in \mg{N}$
+\begin{align}
+  A(n)\ :\ \sum_{i=1}^n i = \frac{n(n+1)}{2}
+\end{align}
+Induktionsbeginn: Es gilt A(1), denn $\sum_{i=1}^1 i = 1 = 
+\frac{1(1+1)}{2}$. \\[1ex]
+Induktionsannahme: A(n) gilt für ein $n \in \NN$. \\[1ex]
+Induktionsschritt von $n$ auf $n+1$:
+\begin{align}
+  \sum_{i=1}^{n+1} i = \sum_{i=1}^n i\ +(n+1) = \frac{n(n+1)}{2} + (n+1) 
+  = \frac{(n+1)(n+2)}{2}
+\end{align}
+Beim ersten Gleichheitszeichen wurde der Term für $n+1$ so umgeformt, dass ein
+Term entsteht, für den die Induktionsannahme verwendbar ist. Beim mittleren 
+Gleichheitszeichen wurde die Induktionsannahme verwendet.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Induktive Definition]
+Es gibt nicht nur das induktive Beweisen, sondern auch das induktive Definieren.
+Hierbei werden Glieder eine Folge durch vorherige Werte definiert. Somit 
+entsteht eine unendliche Folge. Ausgangspunkt ist ein Wert für $a_0$. Der Wert
+$a_1$ wird dann mit Hilfe von $a_0$ definiert. Die Werte $a_{i+1}$ werden dann
+durch $a_i$ definiert.
+
+Es kann auch mehr als ein Startwert definiert werden und die Definition des 
+Folgegliedes kann sich auf mehrere vorherige Werte beziehen.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel Fakultät]
+Die \Begriff{Fakultät} $n!$ kann induktiv definiert werden: $0! = 1$ und 
+$(n+1)! = n! \cdot (n+1)$. Damit ergeben sich $1! = 1$, $2! = 2$, $3! = 6$, 
+$4! = 24$, $\ldots$. 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel Fibonacchi-Zahlen]
+Die \Begriff{Fibonacchi-Zahlen}\index[names]{Fibonacci}
+\footnote{Fibonacci, auch Leonardo von Pisa, (um 1170-nach 1240), 
+italienischer Mathematiker, 
+\url{https://de.wikipedia.org/wiki/Leonardo_Fibonacci}} 
+werden mit Hilfe von zwei Basiszahlen definiert: $f_0 = 0$ und $f_1 = 1$. 
+Die Vorschrift für die Definition lautet für $i \in \NN_0$: $f_{i+2} = f_{i+1} 
++ f_i$. Damit ergibt sich für die Folge der Fibonacci-Zahlen:
+\begin{align*}
+  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 45, \ldots \ .
+\end{align*}
+\end{Unit}
+%%------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+\usepackage{pgffor}
+\newwrite\deueng
+\immediate\openout\deueng=DictDeuEng.txt
+\newwrite\engdeu
+\immediate\openout\engdeu=DictEngDeu.txt
+\newwrite\abk
+\immediate\openout\abk=Abkuerz.txt
+
+\newcommand{\Translation}[2]{\immediate\write\deueng{#1 & #2 \\} \immediate\write\engdeu{#2 & #1 \\}}
+\newcommand{\Abk}[2]{\immediate\write\abk{#1 & #2 \\}}
+
+\newcommand{\closeExtTxt}{\immediate\closeout\deueng \immediate\closeout\engdeu \immediate\closeout\abk}

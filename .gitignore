@@ -1,0 +1,22 @@
+## -- Dateien, die von LaTeX temporär erzeugt werden,
+##    und in der Regel gelöscht werden
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.gz
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.mw
+*.out
+*.thm
+*.toc
+*.txt
+*.xml
+## -- PDF-Dateien werden nicht im git-Repository gesichert,
+##    da sie jederzeit neu erstellt werden
+*.pdf

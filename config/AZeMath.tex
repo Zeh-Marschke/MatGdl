@@ -1,0 +1,106 @@
+%% =============================================================================
+%% AZeMath
+%% Grundlegende Festlegungen für LaTeX-Datei für Artikel, Report und
+%% Buch für Mathematische Sachverhalte
+%% -----------------------------------------------------------------------------
+%% AZeRahmen, Version 3.0.01 - 2025-01-25
+%% =============================================================================
+
+%% -----------------------------------------------------------------------------
+\usepackage{amssymb}          %% mathematische Symbole
+\usepackage{amsmath}          %% Mathematikumgebung von AMS
+\usepackage{amsfonts}         %% mathematische Schriftfamilien
+\usepackage{framed}
+\usepackage{bbm}              % mathematische Mengensymbole
+
+\usepackage[amsmath,thmmarks,amsthm,framed]{ntheorem}
+
+% --- Zerlegen in einzelnen Einheiten, wobei die Nummerierung vorne ist
+\theoremstyle{change}
+\theorembodyfont{\normalfont}
+\newtheorem{Unit}{}[section]
+
+%--- Definition von bunt gerahmten Theormen (ohne Nummern)
+\theoremstyle{nonumberplain}
+\def\theoremframecommand{\fcolorbox{green}{white}}
+\newshadedtheorem{Definition}{Definition}
+\def\theoremframecommand{\fcolorbox{red}{white}}
+\newshadedtheorem{Theorem}{Theorem}
+\newshadedtheorem{Satz}{Satz}
+\def\theoremframecommand{\fcolorbox{blue}{white}}
+\newshadedtheorem{Lemma}{Lemma}
+\newshadedtheorem{Proposition}{Proposition}
+\newshadedtheorem{Bemerkung}{Bemerkung}
+\newshadedtheorem{Korollar}{Korollar}
+\newshadedtheorem{Folgerung}{Folgerung}
+
+\usepackage{gauss}            % Symbole für Gauss-Algorithmus
+  \def\rowaddtolabel#1{\scriptstyle #1}  %% Faktoren bei Quelle und Ziel
+\usepackage{polynom}          % Polynomdivision
+%% -----------------------------------------------------------------------------
+
+%% -----------------------------------------------------------------------------
+%% mathematische Befehle 
+%% -----------------------------------------------------------------------------
+\newcommand*{\eoe}{\hfill $\Delta$}     % end of example
+\newcommand*{\dd}[1]{\,\mathrm{d}#1}    % dx beim Integral
+\newcommand*{\mg}[1]{\mathbbm{#1}}      % Mengensymbol (statt \mathbb{#1}
+\newcommand*{\NN}{\mg{N}}               %   natürliche Zahlen
+\newcommand*{\PP}{\mg{P}}               %   Primzahlen
+\newcommand*{\ZZ}{\mg{Z}}               %   ganze Zahlen
+\newcommand*{\QQ}{\mg{Q}}               %   rationale Zahlen
+\newcommand*{\RR}{\mg{R}}               %   reelle Zahlen
+\newcommand*{\CC}{\mg{C}}               %   komplexe Zahlen
+\newcommand*{\KK}{\mg{K}}               %   Körper
+\newcommand*{\LL}{\mg{L}}               %   Körper oder Lösung
+\newcommand*{\FF}{\mg{F}}               %   Field
+\newcommand*{\DD}{\mg{D}}               %   Definitionsmenge
+\newcommand*{\WW}{\mg{W}}               %   Wertebereich
+\newcommand*{\EE}{\mg{E}}               %   Erwartungswert
+\newcommand*{\BB}{\mg{B}}               %   Boolean
+\newcommand*{\GG}{\mg{G}}               %   Gleitpunktzahlen
+
+\newcommand*\arccot{\operatorname{arc cot}}
+\newcommand*\arsinh{\operatorname{ar sinh}}
+\newcommand*\arcosh{\operatorname{ar cosh}}
+\newcommand*\artanh{\operatorname{ar tanh}}
+\newcommand*\arcoth{\operatorname{ar coth}}
+\newcommand*\Bild{\operatorname{Bild}}
+\newcommand*\Kern{\operatorname{Kern}}
+\newcommand*\Rg{\operatorname{Rg}}
+\newcommand*\lnand{\operatorname{\overline{\wedge}}}
+\newcommand*\lnor{\operatorname{\overline{\vee}}}
+\newcommand*\lxor{\operatorname{\underline{\vee}}}
+\newcommand*\llnor{\operatorname{\bar{\vee}}}
+\newcommand*\llnand{\operatorname{\bar{\wedge}}}
+\newcommand*\modulo{\operatorname{modulo}}
+\newcommand*\boolAnd{\operatorname{\wedge}}
+\newcommand*\boolOr{\operatorname{\vee}}
+\newcommand*\sgn{\operatorname{sgn}}
+\newcommand*\lb{\operatorname{lb}}
+\newcommand*\Nst{\operatorname{Nst}}
+\newcommand*\Eig{\operatorname{Eig}}
+\newcommand*\rd{\operatorname{rd}}
+\newcommand*\rot{\operatorname{rot}}
+
+\newcommand*{\vektor}[1]{\boldsymbol{#1}}       %% Vektoren (fett oder mit Pfeil)
+\newcommand*{\sdot}{\boldsymbol{\cdot}}  % Punkt für Skalarprodukt
+\newcommand*{\Begriff}[1]{\textbf{#1}\index{#1}}
+
+%% -----------------------------------------------------------------------------
+%% Einheiten, für die Verwendung mit siunitx
+\newcommand{\cm}{\centi\metre}
+
+%% -----------------------------------------------------------------------------
+
+%% -----------------------------------------------------------------------------
+%% Gegen die meisten Overfull hboxes, aus
+%% dctt, Axel Reichert, Message-ID: <a84us0$plqcm$7@ID-30533.news.dfncis.de>
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
+%% -----------------------------------------------------------------------------

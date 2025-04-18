@@ -1,0 +1,117 @@
+%% =============================================================================
+%% Mathematische Grundlagen - Grundbegriffe
+%% Vorwort
+%% 2025-04-08 Andreas Zeh-Marschke
+%% =============================================================================
+\chapter*{Vorwort}
+
+In diesem Skript werden \textbf{Mathematische Grundlagen} dargestellt. 
+Dies beinhaltet die Themen 
+\textbf{Sprache der Mathematik} (Kapitel \ref{cha:Gdl-K01-Sprache}),
+\textbf{Aussagen und elementare Logik} (Kapitel \ref{cha:Gdl-K02-ElemLogik}),
+\textbf{Beweisverfahren} (Kapitel \ref{cha:Gdl-K03-Beweise}), 
+\textbf{Naive Mengenlehre} (Kapitel \ref{cha:Gdl-K04-Mengen}),
+\textbf{Relationen} (Kapitel \ref{cha:Gdl-K05-Relationen}) und
+\textbf{Abbildungen und Funktionen} (Kapitel \ref{cha:Gdl-K06-Abbildungen}).
+Das sind somit nur die wichtigsten \textbf{Grundbegriffe}. Nicht dargestellt 
+sind Zahlen, Zahlenmengen und Strukturen, die in eigenen Skripten dargestellt 
+werden.
+
+Dieses Skript entstand aus Vorlesungen, die ich an der Dualen Hochschule 
+Baden-Württemberg - Karlsruhe (ehemalige Berufsakademie Karlsruhe), erstmals 
+im Frühjahr 2001 im Studiengang Wirtschaftsinformatik im Fachbereich 
+Wirtschaft, gehalten habe. In der Vorlesung mit dem Namen \textbf{Logik und 
+Algebra} wurde das Thema Mathematische Grundlagen im Umfang von etwa 30 
+Stunden inklusive Übungen behandelt - inzwischen mit etwa 24 Stunden. Daher 
+können in der Vorlesung einige Themen nur angerissen werden. Für die weite 
+Reise ins Innere der Mathematik und für die Frage des Einsatzes 
+mathematischer Theorie in die Praxis der Anwendung kann dies nur ein 
+erster Startpunkt sein.
+
+Was soll im Rahmen eines solchen Skript behandelt werden? Was ist wichtig? 
+Dies ist keine leichte Frage, denn die Mathematik und auch das Thema 
+Mathematische Grundlagen ist reichhaltig und bietet viele interessante 
+Aspekte, die nicht alle in ein kleines Skript zusammengefasst werden kann. 
+Für die Auswahl die Frage gestellt werden, was ist für die weiteren Themen
+in der Mathematik wichtig? Wichtig ist zu denken und zwar systematisch, 
+logisch, abstrakt und strukturiert! Dabei darf aber der Bezug zu 
+verschiedenen Anwendungen in Mathematik, Informatik, Naturwissenschaften und 
+Technik nicht außer acht gelassen werden. Ich werde versuchen neben der 
+Theorie auch praktische Beispiele zu bringen, um damit (hoffentlich) das 
+Verständnis zu fördern.
+
+Des weiteren möchte ich Peter Hartmann beipflichten, der im Vorwort zu 
+seinem Buch \textbf{Mathematik für Informatiker} (\cite{Hartmann.2002}) 
+geschrieben hat: \enquote{Genauso wie Sie eine Programmiersprache nicht durch 
+das Lesen der Syntax lernen können, ist es unmöglich Mathematik zu verstehen 
+ohne mit Papier und Bleistift zu arbeiten}. Das heißt, dass eine intensive
+Beschäftigung mit der Mathematik notwendig ist, um die Mathematik zu 
+verstehen. Dazu gehört auch viel Übung. Das ist mit Arbeit verbunden, aber 
+ohne dies geht es nicht.
+
+Anforderungen wandeln sich schnell und werden sich wohl auch immer schneller 
+wandeln. Daher ist die schnelle Einarbeitung in neue Themen stets notwendig.
+Dafür ist eine stabile und solide Basis nötig. Dazu ist es notwendig, dass 
+man \textbf{denkt}, um das vorhandene Wissen richtig einzusetzen. Daher werde 
+ich in diesem Skript auf Beweise nicht ganz verzichten, denn Beweise sind 
+eine Möglichkeit, um das \emph{Denken} zu üben. Das Denken darf sich jedoch 
+nicht allein auf die Mathematik konzentrieren. Wichtig ist ein übergreifendes 
+Denken. Wobei dies ein langer Entwicklungsprozess sein wird, der im Rahmen nur
+einer Vorlesung nicht erreicht werden kann. Dieses Skript stellt eine 
+Einführung dar, um eine Basis für die Arbeit zu schaffen. Ich hoffe, dass mir 
+dies einigermaßen gelungen ist, obwohl ich weiß, dass es schwierig ist, das 
+mathematische Verständnis zu vermitteln.
+
+Im Literaturverzeichnis sind einige grundlegende und weiterführende Bücher 
+aufgeführt. Bücher, welche das Thema Logik und Algebra behandeln, oder 
+Teilaspekte dieses Skripts beleuchten. Diese Literatur kann daher als 
+Vertiefung aufgefasst werden, die jedoch in der Regel weit mehr beinhalten 
+als dieses Skript. Manchmal haben die Bücher auch andere Herangehensweisen an 
+die Thematik, was sehr spannend sein kann, denn es gibt viele Wege, sich die 
+Mathematik zu erschließen.
+
+Manches übernehme ich von \cite{Zeh-Marschke.2014}.
+Eine schöne, sehr kompakte Ausarbeitung ist auch bei Deiser, Lasser, Vogt und 
+Werner (siehe \cite{Deiser.Lasser.2016}) zu finden.
+
+Die behandelten Inhalte werden gut von 
+Hartmann \cite{Hartmann.2002}, 
+Lehmann und Schulz \cite{Lehmann.2004}, 
+Meinel und Mundhenk \cite{Meinel.2002}, 
+Schichel und Steinbauer \cite{Schichl.2009}, 
+Staab \cite{Staab.2007} und 
+Struckmann und Wätjen \cite{Struckmann.2007} 
+dargestellt. Diese wurden mehr oder weniger für die Erstellung des Skriptes 
+zu Rate gezogen.
+
+Die anderen Referenzen in der Literaturliste beziehen sich auf Bücher, die 
+teilweise deutlich über den Stoff der Vorlesung gehen: 
+Beutelspacher und Zschiegner \cite{Beutelspacher.2002}, 
+Henze \cite{Henze.2005}, 
+Knauer \cite{Knauer.2001}, 
+Lau \cite{Lau.2004}, 
+\cite{Lau.2004b}, 
+Schmidt \cite{Schmidt.2000}, 
+Steger und Sickinger \cite{Steger.2002}, 
+Teschl und Teschl \cite{Teschl.2006} und 
+Witt \cite{Witt.2001}. 
+Die Bücher Arens und andere \cite{Arens.2008} und 
+Eichholz und Vilkner \cite{Eichholz.2002} sind eher Nachschlagewerke.
+
+Die erste Version des Skripts entstand 2001. Im Laufe der Jahre wurden 
+Anpassungen und Ergänzungen, sowohl auf fachlicher, als auch auf technischer 
+Art umgesetzt. Von daher wird das Skript ständig Veränderungen unterzogen. Das 
+Skript wurde mit \TeX, genauer mit \LaTeX\ erstellt.
+
+Ich habe versucht Fehler herauszunehmen, ohne neue Fehler zu machen - nicht 
+immer ganz einfach. Wenn Fehler entdeckt werden, so bitte ich, dass mir diese 
+Fehler gemeldet werden, damit ich diese Fehler in einer neuen Version 
+korrigieren kann. Auch Anregungen und weitere Anmerkungen sind gerne 
+willkommen. 
+\vspace{1cm}
+
+
+Manches übernehme ich von \cite{Zeh-Marschke.2014}.
+Eine schöne, sehr kompakte Ausarbeitung ist auch von Deiser, Lasser, Vogt und 
+Werner (siehe \cite{Deiser.Lasser.2016})
+

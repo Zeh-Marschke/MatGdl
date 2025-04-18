@@ -1,0 +1,1302 @@
+%% =============================================================================
+%% Mathematische Grundlagen - Grundbegriffe
+%% Kapitel 02 - Aussagen und elementare Logik
+%% Autor: Andreas Zeh-Marschke
+%% Datum: 2025-03-30
+%% =============================================================================
+
+\chapter{Aussagen und elementare Logik}
+\label{cha:Gdl-K02-ElemLogik}
+
+%\begin{unit}
+In diesem Kapitel werden grundlegende Begriffe der mathematischen Logik 
+eingeführt. Es werden dabei einige Themen behandelt, die für das 
+mathematische Denken, die mathematische Sprechweise und das Beweisen 
+benötigt werden. Es kann und soll damit im Rahmen dieser Einführung die
+mathematische Logik nur insoweit eingeführt werden, wie dies für das 
+weitere Verständnis benötigt wird. Als Ziel kann hier die Einführung in das 
+logische Denken und die Durchführung von logischen Schlussfolgerungen genannt
+werden. Logische Schlussfolgerungen, die gelernt und später auch angewendet 
+werden. Ein weiteres Ziel ist es, mathematische Formulierungen kennen zu 
+lernen, mathematische Formulierungen, die nicht nur in der Mathematik, 
+sondern auch in anderen Bereichen (zum Beispiel Wirtschaftswissenschaften,
+Ingenieurwesen, Informatik \ldots) eingesetzt werden. Die Einführung in 
+diesem Kapitel ist damit nur sehr knapp und geht somit nicht bis zu den
+philosophischen Fragen der Logik. Das würde den Rahmen ganz und gar 
+sprengen.
+
+Die klare Formulierung von Aussagen ist in allen Bereichen notwendig, nicht 
+nur in der Mathematik. Beispielsweise ist die Spezifikation einer Software 
+ohne klare Aussagen, Aussagen, die vollständig und widerspruchsfrei sind, 
+nicht denkbar. Auch andere Wissenschaften erfordern klare Aussagen und 
+Folgerungen aus Aussagen. Auch in Programmiersprachen sind logische Konzepte
+implementiert. Um diese Konzepte zu verstehen, ist die Kenntnis von Aussagen 
+eine unabdingbare Basis.
+
+Zuerst werden \textbf{Aussagen} (Abschnitt \ref{sec:ElemLogik-Aussagen}) und 
+dann \textbf{Junktoren} (Abschnitt \ref{sec:ElemLogik-Junktoren}) definiert.
+Junktoren sind grundlegende Verknüpfungen zwischen Aussagen. Dann (Abschnitt
+\ref{sec:ElemLogik-Verknuepfung}) werden allgemeine Verknüpfungen zwischen 
+Aussagen betrachtet. Danach werden Sätze der \Begriff{Aussagenlogik} 
+(Abschnitt \ref{sec:ElemLogik-Aussagenlogik}) untersucht und bewiesen. 
+Im anschließenden Abschnitt \ref{sec:ElemLogik-Praedikate} wird der 
+Sprachumfang der mathematischen Sprache erweitert. 
+%\end{unit}
+
+%% -----------------------------------------------------------------------------
+%% Abschnitt: Aussagen und Aussageformen
+%% -----------------------------------------------------------------------------
+\section{Aussagen}
+\label{sec:ElemLogik-Aussagen}
+
+%% =============================================================================
+%\subsection*{Aussagen}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Aussage]
+Zur präzisen mündlichen oder schriftlichen Formulierung von Sachverhalten ist 
+die Mathematik, aber nicht allein die Mathematik, dazu übergegangen, Aussagen 
+zu treffen, die teilweise in natürlicher Sprache und teilweise in einer 
+künstlichen und formalisierten Sprache wiedergegeben werden. Was ist eine
+\emph{Aussage}? Genauer gesagt, was wird unter einer Aussage verstanden, wie 
+wird der Begriff definiert.
+
+\begin{Definition}
+Ein sprachliches Gebilde $A$ heißt \Begriff{Aussage}, wenn eindeutig 
+entscheidbar ist, ob es wahr oder falsch ist. 
+\end{Definition}
+\Translation{Aussage}{proposition}
+
+Einige Ergänzungen zur Definition:
+\begin{itemize}
+
+\item Einer Aussage kann somit eindeutig der \Begriff{Wahrheitswert}
+  \enquote{\Begriff{wahr}} oder \enquote{\Begriff{falsch}} zugeordnet werden. 
+  Ist $A$ eine Aussage, dann sei $w(A)$ der zugehörige Wahrheitswert der 
+  Aussage.
+\Translation{Wahrheitswert}{logical value}
+\Translation{wahr}{true}
+\Translation{falsch}{false}
+
+\item Statt der Begriffe \enquote{wahr} und \enquote{falsch} werden oftmals 
+  auch andere Begriffe oder Kurzzeichen verwendet. Es werden oftmals statt
+  \enquote{wahr} auch der englische Begriff \enquote{\Begriff{true}} oder die   
+  Kürzel $W$, $w$, $T$, $t$ oder $1$ verwendet. Für \enquote{falsch} wird 
+  auch der englische Begriff \enquote{\Begriff{false}} oder die Kürzel $F$, 
+  $f$ oder $0$ verwendet. 
+
+\item Aussagen werden oftmals mit großen lateinischen Buchstaben bezeichnet,
+  beispielsweise $A_i$ ($i \in \NN$). 
+
+\end{itemize}
+
+Diese Definition von Aussagen basiert auf dem Prinzip der Zweiwertigkeit, das 
+heißt auf der Tatsache, dass eine Aussage entweder wahr oder falsch ist. 
+Daher wird dies zweiwertiger Logik genannt. Es gibt Kulturkreise, in denen 
+das Prinzip der zweiwertigen Logik nicht gilt, in denen es neben \enquote{wahr}
+\ und \enquote{falsch} auch noch andere Wahrheitswerte gibt, zum Beispiel
+\enquote{vielleicht} oder \enquote{unbestimmt} oder sogar noch andere 
+Abstufungen.\footnote{siehe hierzu John D. Barrow; Ein Himmel voller Zahlen 
+- Auf den Spuren mathematischer Wahrheit; rororo, 1999} 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiele]
+Dazu einige Beispiele, um den Begriff \emph{Aussage} genauer zu fassen. 
+\begin{enumerate}
+
+\item \textbf{2 + 3 = 5.} \\
+Dies ist eine wahre Aussage.
+
+\item \textbf{4 ist eine Primzahl.} \\
+Dies ist eine falsche Aussage. Das bedeutet, dass Aussagen nicht immer wahr 
+sind, sie können auch falsch sein!
+
+\item \textbf{Es gibt unendlich viele Primzahlen.} \\
+Dies ist eine wahre Aussage, die bereits vom griechischen Mathematiker 
+Euklid\index[names]{Euklid}\footnote{Euklid von Alexandria (um 300 v.Chr.),
+griechischer (\url{https://de.wikipedia.org/wiki/Euklid})} vor etwa 2.300 
+Jahren bewiesen wurde.
+
+\item \textbf{Die Gleichung $x^n + y^n = z^n$ hat, außer der trivialen 
+Lösung, keine ganzzahligen Lösungen für $n$ größer als 2} \\
+Dies ist eine Aussage, die Pierre de Fermat\index[names]{Fermat, Pierre de}
+\footnote{Pierre de Fermat (1601 - 1665), französischen Mathematiker 
+(\url{https://de.wikipedia.org/wiki/Pierre_de_Fermat})\\
+Eine Kurzbiographie über Pierre de Fermat: Klaus Barner; Das Leben Fermats; 
+in Mitteilungen der Deutschen Mathematiker-Vereinigung, Heft 3/2001}
+etwa 1637 aufgestellt hat. Die Aussage ist als großer Fermat'scher Satz oder 
+Fermats letzter Satz bekannt. Sie wurde erst 1993 / 1995 von Andrew Wiles
+\index[names]{Wiles, Andrew} 
+\footnote{Andrew Wiles (*1953), britischer Mathematiker, 
+(\url{https://de.wikipedia.org/wiki/Andrew_Wiles})} bewiesen\footnote{Eine
+interessante und lesenswerte Beschreibung der Geschichte des Satzes von 
+Fermat, von den Grundlagen bis zu seiner Lösung, mit vielen historischen 
+Anmerkungen steht in Simon Singh; Fermats letzter Satz; dtv, 2000}.
+
+\item \textbf{Jede gerade Zahl, die größer als 2 ist, ist Summe zweier 
+Primzahlen.}\\
+Die Aussage ist die Goldbach'sche Vermutung.\footnote{ 
+  \url{https://de.wikipedia.org/wiki/Goldbachsche_Vermutung}, benannt nach
+  Christian Goldbach\index[names]{Goldbach, Christian} (1690-1764),
+  deutscher Mathematiker,
+  (\url{https://de.wikipedia.org/wiki/Christian_Goldbach)}} 
+(\emph{Beispiele}: 4 = 2 + 2, 6 =  3 + 3, 8 = 3 + 5, 10 = 5 + 5 = 3 + 7) 
+Dies ist eine Aussage, von der noch nicht bekannt ist, ob sie wahr oder 
+falsch ist.
+
+\item \textbf{Es ist Vollmond.} \\
+Dies ist eine Aussage, die manchmal wahr ist, manchmal jedoch falsch. Der
+Wahrheitsgehalt hängt von der Zeit ab. Dies wird in der \textbf{temporalen 
+Logik}\index{temporale Logik} 
+(\url{https://de.wikipedia.org/wiki/Temporale_Logik}) betrachtet. Dort werden
+zeitliche Zusammenhänge mit einbezieht.
+\Translation{Temporale Logik}{temporal logic}
+
+\item \textbf{Guten Morgen!}\\
+Dies ist keine Aussage, sondern ein Ausruf.
+\end{enumerate}
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Diskussion]
+Nun wird der Satz \enquote{\emph{Dieser Satz ist falsch.}} untersucht. Auf 
+den ersten Blick ist es eine Aussage. Wenn es eine Aussage ist, dann ist zu 
+klären, welchen Wahrheitswert die Aussage hat, denn einer Aussage muss nach 
+der Definition eindeutig ein Wahrheitswert zugeordnet werden können. 
+
+Wenn es eine wahre Aussage ist, dann besagt der Satz, dass die Aussage des 
+Satzes falsch ist, dass es also eine falsche Aussage ist. Also kann es keine 
+wahre Aussage sein. Ist es dann eine falsche Aussage? Wenn die Aussage des 
+Satzes falsch ist, dann besagt dies, dass die Aussage des Satzes wahr ist!? 
+Auch das führt zu einem Widerspruch. Es kann nicht entschieden werden, ob der 
+Satz wahr oder falsch ist. Somit ist es keine Aussage (nach der Definition)! 
+Es ist eine Paradoxie, die zu tiefer gehenden, philosophischen Problemen der 
+Logik führt, die hier nicht näher beleuchtet werden.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Diskussion] 
+Beim Satz \enquote{\emph{Diese Person ist groß.}} ist es ebenfalls schwer zu
+bestimmen, ob dieser Satz wahr oder falsch ist. Die Größe bezieht sich hierbei 
+auf die Körpergröße. Für Pygmäen ist eine Person mit 1,70 m Körperlänge eine 
+große Person, für Basketballspieler ist dies jedoch nicht groß. Dies führt in 
+die moderne Entwicklung der \Begriff{Fuzzylogik} 
+(\url{https://de.wikipedia.org/wiki/Fuzzylogik}), die bewusst mit Unschärfen
+arbeitet. Die Fuzzylogik wird hier nicht weiterverfolgt. Die Fuzzylogik wird
+beispielsweise in der Regelung für die Steuerung in Technik aber auch in der 
+Medizin eingesetzt.
+\end{Unit}
+\Translation{Fuzzylogik}{fuzzy logic}
+
+%%------------------------------------------------------------------------------
+%% Abschnitt: Verknüpfung von Aussagen
+%%------------------------------------------------------------------------------
+%%
+\section{Junktoren}
+\label{sec:ElemLogik-Junktoren}
+
+\begin{Unit}[Anmerkung]
+Im Nachfolgenden werden grundlegende Verknüpfungen von Aussagen betrachtet. 
+Diese werden \Begriff{Junktoren} genannt. Damit werden Aussagen verknüpft. 
+Der Wahrheitswert hängt dabei von den Wahrheitswerten der verknüpften 
+Aussagen und der Art der Verknüpfung ab. Auch wenn die Verknüpfungen 
+teilweise aus dem Alltagsleben bekannt sind, so ist deren mathematische 
+Definition und Deutung manchmal etwas anders als in der Umgangssprache. Es 
+sind dies die Verknüpfungen \enquote{nicht}, \enquote{und}, \enquote{oder},
+\enquote{wenn, dann}\ und \enquote{genau dann, wenn}. In den Definitionen 
+der Verknüpfungen werden diese Verknüpfungen so festgelegt, dass sich der
+Wahrheitswert der Verknüpfung \textbf{eindeutig} aus den Wahrheitswerten der
+Teilaussagen ergibt, unabhängig davon, ob zwischen den Teilaussagen ein 
+inhaltlicher Zusammenhang besteht oder jedoch kein Zusammenhang besteht. 
+\end{Unit}
+\Translation{Junktor}{logical connective}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Wahrheitstafel]
+
+Zur Darstellung der Aussagen wird eine \Begriff{Wahrheitstafel} oder
+\Begriff{Verknüpfungstafel} verwendet. In der Tabelle sind für alle möglichen
+Belegungen der Variablen mit Wahrheitswerten der daraus resultierende 
+Wahrheitswert der Verknüpfung dargestellt. Die Wahrheitstafel in Tabelle
+\ref{tbl:Beispiel Wahrheitstafel} zeigt als Beispiel die Wahrheitstafel für 
+die Junktoren, die im Nachfolgenden dann genauer beschrieben und erläutert 
+werden.
+\Translation{Wahrheitstafel}{truth table}
+
+\begin{table}[htbp] 
+\begin{center}
+  \begin{tabular}{c|c||c|c|c|c|c}
+    $A$ & $B$ & $\neg A$ & $A \land B$ & $A \lor B$ & $A \rightarrow B$ 
+      & $A \leftrightarrow B$\\ \hline
+    $w$ & $w$ & $f$ & $w$ & $w$ & $w$ & $w$ \\
+    $w$ & $f$ & $f$ & $f$ & $w$ & $f$ & $w$ \\
+    $f$ & $w$ & $w$ & $f$ & $w$ & $w$ & $w$ \\
+    $f$ & $f$ & $w$ & $f$ & $f$ & $w$ & $w$ \\
+  \end{tabular}
+  \caption{Wahrheitstafel}
+  \label{tbl:Beispiel Wahrheitstafel}
+\end{center} 
+\end{table}
+\end{Unit}
+
+%% =============================================================================
+\subsection*{Negation}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Negation] Zuerst wird die \enquote{nicht}-Verknüpfung
+präzisiert.
+
+\begin{Definition}
+Es sei $A$ eine beliebige Aussage. Eine Aussage $C$ heißt \Begriff{Negation} 
+der Aussage $A$ oder \Begriff{nicht} $A$, falls $C$ genau dann wahr ist, 
+wenn $A$ falsch ist und falsch, wenn $A$ wahr ist. 
+\end{Definition}
+\Translation{Negation}{negation}
+\Translation{nicht}{not}
+
+Die Negation von $A$ wird auch mit $C = \neg A$ oder mit $C = not(A)$ oder 
+mit $C = \overline{A}$ bezeichnet. Die Negation von $A$ wird in der
+Wahrheitstafel in Tabelle \ref{tbl:Beispiel Wahrheitstafel} dargestellt.
+
+Auch wenn hier nur eine Aussage verwendet wird, wird hier von einer 
+Verknüpfung gesprochen, einer 1-stelligen Verknüpfung. Diese Verknüpfung 
+entspricht auch dem umgangssprachlichen Umgang \enquote{nicht}.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Ist $A$ die Aussage, dass eine Kugel rot ist, dann ist $\neg A$ die Aussage, 
+dass die Kugel nicht rot ist.
+\end{Unit}
+
+%% =============================================================================
+\subsection*{Konjunktion}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Konjunktion] Jetzt kommt die \enquote{und}-Verknüpfung.
+
+\begin{Definition}
+Es seien $A$ und $B$ beliebige Aussagen. Eine Aussage $C$ heißt
+\Begriff{Konjunktion} oder \textbf{$und$-Verknüpfung}\index{und-Verknüpfung}
+\index{Verknüpfung, und-} der Aussagen $A$ und $B$, falls $C$ genau dann wahr 
+ist, wenn $A$ wahr ist \textbf{und} $B$ wahr ist. 
+\end{Definition}
+\Translation{Konjunktion}{logical conjunction}
+\Translation{und}{and}
+
+Die Konjunktion von $A$ und $B$ wird mit $C = A \land B$ oder mit 
+$C = A\ and \ B$ bezeichnet. 
+
+Die Konjunktion von $A$ und $B$ ist in der Wahrheitstafel in Tabelle
+\ref{tbl:Beispiel Wahrheitstafel} dargestellt. Die Konjunktion entspricht 
+dem umgangssprachlichen \enquote{und}.
+
+Alle möglichen Kombinationen der Wahrheitswerte für $A$ und $B$ sind mit dem
+Ergebnis der Verknüpfung dargestellt.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel] \ 
+
+(1) Ist $A$ die Aussage, dass eine Kugel rot ist und $B$ die Aussage, dass 
+auf einer Kugel eine gerade Zahl ist, dann ist die Aussage $C = A \land B$ 
+die Aussage, dass eine Kugel rot ist und eine gerade Nummer hat.
+
+(2) Ist $A$ die wahre Aussage, \enquote{2 ist gerade} und $B$ die falsche 
+Aussage \enquote{3 ist gerade}, so ist die Aussage $A \land B$ 
+(\enquote{2 ist gerade und 3 ist gerade}) eine falsche Aussage.
+\end{Unit}
+
+%% =============================================================================
+\subsection*{Disjunktion}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Disjunktion] Jetzt kommt die 
+\enquote{oder}-Verknüpfung.
+
+\begin{Definition}
+Es seien $A$ und $B$ beliebige Aussagen. Eine Aussage $C$ heißt
+\Begriff{Disjunktion} oder \Begriff{Adjunktion} oder 
+\textbf{$oder$-Verknüpfung}\index{oder-Verknüpfung}\index{Verknüpfung, oder-} 
+oder \textbf{$or$-Verknüpfung}\index{or} der Aussagen $A$ und $B$, falls $C$ 
+genau dann wahr ist, wenn $A$ wahr ist oder $B$ wahr ist (oder $A$ wahr ist 
+und $B$ wahr ist). 
+\end{Definition}
+\Translation{Disjunktion}{logical disjunktion}
+\Translation{oder}{or}
+
+Die Disjunktion von $A$ und $B$ wird mit $C = A \lor  B$ oder $C = A\ or\ B$ 
+bezeichnet.
+
+Die Verwendung von \enquote{$oder$} im mathematischen Sinne ist ein nicht
+ausschließendes \enquote{oder}. In der Umgangssprache wird oftmals das
+\enquote{oder} oftmals als \enquote{exklusives oder}, also als 
+\enquote{entweder \ldots oder}, verwendet. Dies ist zu beachten. Hier wird 
+mit der $oder$-Verknüpfung stets das nicht-ausschließende \enquote{oder} 
+verwendet. Ein \enquote{ausschließendes oder} wird später noch eingeführt.
+
+Die Disjunktion von $A$ und $B$ wird in der Wahrheitstafel in Tabelle
+\ref{tbl:Beispiel Wahrheitstafel} dargestellt.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel] \ 
+
+(1) Ist $A$ die Aussage, dass eine Kugel rot ist und $B$ die Aussage, dass 
+auf einer Kugel eine gerade Zahl ist, dann ist die Aussage $C = A \lor B$ die
+Aussage, dass die Kugel rot ist oder eine gerade Nummer hat. Die Kugel kann 
+auch rot sein und eine gerade Nummer haben.
+
+(2) Ist $A$ die wahre Aussage, \enquote{2 ist gerade} \ und $B$ die falsche 
+Aussage \enquote{3 ist gerade}, so ist die Aussage $A \lor B$ (\enquote{2 ist 
+gerade oder 3 ist gerade}) eine wahre Aussage.
+\end{Unit}
+
+%% =============================================================================
+\subsection*{Implikation}
+
+%% -----------------------------------------------------------------------------
+
+\begin{Unit}[Definition Implikation] Bei der \enquote{wenn-dann}-Verknüpfung 
+wird der Vergleich zum umgangssprachlichen noch etwas schwieriger.
+
+\begin{Definition}
+Es seien $A$ und $B$ beliebige Aussagen. Eine Aussage $C$ heißt
+\Begriff{Implikation} oder \Begriff{Subjunktion} oder \Begriff{Folgerung} von 
+$A$ nach $B$, falls $C$ genau dann wahr ist, wenn $A$ und $B$ wahr sind oder 
+aber $A$ falsch ist. Die Implikation von $A$ nach $B$ wird mit 
+$C = A \rightarrow B$ bezeichnet. Es heißt dann auch \enquote{aus $A$
+\Begriff{folgt} $B$}.
+\end{Definition}
+\Translation{Implikation}{material conditional}
+\Translation{folgt}{implies}
+
+Die Implikation von $A$ und $B$ wird in der Wahrheitstafel in der Tabelle
+\ref{tbl:Beispiel Wahrheitstafel} dargestellt.
+
+Mit dieser Definition haben viele Personen, die vom normalen Sprachgebrauch 
+ausgehen Schwierigkeiten, denn in der vorletzten Zeile steht, dass von etwas
+Falschem etwas Richtiges gefolgert werden kann. Das ist auf den ersten Blick
+merkwürdig, aber es wurde oben bereits erwähnt, dass die mathematische 
+Definition manchmal etwas anders ist. Ein einfaches Beispiel ist in 
+Beispiel \ref{bsp:ImplikationUnwahr} zu finden.
+\end{Unit}
+
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Es sei $A$ die wahre Aussage \enquote{2 ist gerade}\ und $B$ die wahre 
+Aussage \enquote{4 ist gerade}. Die Aussage $A \rightarrow B$ ist ebenfalls 
+wahr, da beide Teilaussagen wahr sind. 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+\label{bsp:ImplikationUnwahr}
+Es sei $A$ die falsche Aussage \enquote{1 = -1} und $B$ die wahre Aussage
+\enquote{$1^2 = (-1)^2$}. Auch die Aussage $A \rightarrow B$ ist wahr.
+
+Aus etwas Falschem kann alles gefolgert werden! Das ist das, was vielen 
+Probleme macht. Aber aus einer falschen Aussage kann alles gefolgert werden, 
+etwas Richtiges oder etwas Falsches. Aus der Sicht der Logik sind dann diese
+entsprechenden Folgerungen wahr, nicht die Teilaussage $B$, sondern die 
+komplette Folgerung.
+
+Daher ist es wichtig, dass bei der Bearbeitung die klare mathematische 
+Definition beachtet wird und nicht das, was umgangssprachlich darunter 
+verstanden wird.
+\end{Unit}
+
+%% =============================================================================
+\subsection*{Äquivalenz}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Äquivalenz] Nun wird die 
+\enquote{genau dann - wenn}-Verknüpfung vorgestellt.
+
+\begin{Definition}
+Eine Aussage $C$ heißt \Begriff{Äquivalenz} oder \Begriff{Bijunktion} von $A$ 
+und $B$, falls $C$ genau dann wahr ist, wenn $A$ wahr ist und $B$ wahr ist 
+oder aber $A$ falsch ist und $B$ falsch ist. Die Äquivalenz von $A$ und $B$ 
+wird mit $C = A \leftrightarrow B$ bezeichnet.
+\end{Definition}
+\Translation{Äquivalenz}{logical biconditional}
+\Translation{Äquivalenz}{equivalence}
+
+Die Äquivalenz von $A$ und $B$ wird in der Wahrheitstafel in Tabelle
+\ref{tbl:Beispiel Wahrheitstafel} dargestellt. Die beiden Aussagen $A$ und 
+$B$ haben den selben Wahrheitswert. Beide sind wahr oder beide sind falsch. 
+Die Aussage $A$ ist genau dann wahr, wenn auch Aussage $B$ wahr ist.
+
+Zwei Aussagen heißen \Begriff{logisch äquivalent}, wenn sie für jede 
+Belegung der Teilaussagen jeweils denselben Wahrheitswert erzeugen. 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Es sei $A$ die Aussage, dass der Schalter (im Stromkreis) geschlossen ist und 
+$B$ die Aussage, dass der Strom im Stromkreis fließt. Dann sind die Aussagen 
+$A$ und $B$ äquivalent.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Anmerkung]
+Damit sind die fünf wichtigsten Verknüpfungen (Negation, Konjunktion, 
+Disjunktion, Implikation und Äquivalenz) eingeführt. Sie werden auch
+\Begriff{Junktoren} genannt.
+\Translation{Junktor}{sentential connective}
+
+Bei der Darstellung von Ausdrücken kann es zu Problemen kommen, wenn keine 
+Klammern gesetzt werden oder wenn keine Vereinbarung über die Reihenfolge 
+der Verknüpfungen festlegt ist. Beispiel: $A \land B \lor C$.
+
+Es wird daher vereinbart: Die Junktoren $\neg$, $\land$, $\lor$, 
+$\rightarrow$ und $\leftrightarrow$ binden jeweils stärker als die 
+Nachfolger in dieser Liste. Daher kann der Ausdruck $A \land B \lor C$ 
+auch als $(A \land B) \lor C$ geschrieben werden, während 
+$A \land (B \lor C)$ etwas anderes darstellt.
+
+Im Zweifelsfall sollten eher etwas mehr Klammern geschrieben werden als 
+zu wenige, um mögliche Fehlerquellen oder genauer Interpretationsfehler 
+zu vermeiden.
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+%% Abschnitt: Verknüpfung von Aussagen
+%%------------------------------------------------------------------------------
+%%
+\section{Verknüpfung von Aussagen}
+\label{sec:ElemLogik-Verknuepfung}
+
+%% =============================================================================
+\subsection*{Verknüpfungen}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Anmerkung]
+Ausgehend von elementaren Aussagen  können mit Hilfe der Junktoren weitere 
+Aussagen, zusammengesetzte Aussagen, aufgebaut werden. Sind $A_1$ und $A_2$ 
+zwei Aussagen, dann sind auch $(\neg A_1)$, $(A_1 \land A_2)$, 
+$(A_1 \lor A_2)$, $(A_1 \rightarrow A_2)$ und $(A_1 \leftrightarrow A_2)$ 
+wieder Aussagen. Damit können dann immer umfangreichere Aussagen gebildet 
+werden. Diese zusammengesetzten Aussagen heißen auch 
+\Begriff{aussagenlogische Formeln}. Wenn der Zusammenhang klar ist auch 
+kurz \textbf{Formeln}.
+\Translation{aussagenlogische Formel}{aussagenlogische Formel}
+
+Wenn es bezüglich der Klammern keine Missverständnisse gibt, können Klammern
+weggelassen werden. Hiermit werden Ausgaben formal aufgebaut. Die Syntax 
+beschriebt den Aufbau der Aussagen. Die Bedeutung, die Semantik, hängt von 
+den Belegungen der elementaren Aussagen ab. Die Bedeutung einer 
+umfangreichen Bedeutung kann dann Stück für Stück berechnet werden.
+
+Auf die Syntax und Semantik wird hier nicht genauer eingegangen. Dies kann
+beispielsweise bei Witt \cite{Witt.2001} nachgesehen werden. 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Mit Hilfe einer Wahrheitstafel können auch zusammengesetzte Aussagen 
+schrittweise gelöst werden. Dazu wird die zusammengesetzte Aussage 
+$(A \rightarrow B) \lor (A \land C)$ betrachtet. Wie sieht der Wahrheitswert 
+der Aussage in Abhängigkeit von den Wahrheitswerten der elementaren Aussagen 
+$A$, $B$ und $C$ aus. (siehe Tabelle 
+\ref{tbl:Beispiel Auswertung Wahrheitstafel})
+
+\begin{table}[htbp] 
+\begin{center}
+  \begin{tabular}{c|c|c||c|c|c|c|c|c|c|}
+    $A$ & $B$ & $C$ & $(A$ & $\rightarrow$ & $B)$ & $\lor$ & $(A$ & $\land$ 
+      & $C)$ \\ \hline
+    $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ \\
+    $w$ & $w$ & $f$ & $w$ & $w$ & $w$ & $w$ & $w$ & $f$ & $f$ \\
+    $w$ & $f$ & $w$ & $w$ & $f$ & $f$ & $w$ & $w$ & $w$ & $w$ \\
+    $w$ & $f$ & $f$ & $w$ & $f$ & $f$ & $f$ & $w$ & $f$ & $f$ \\
+    $f$ & $w$ & $w$ & $f$ & $w$ & $w$ & $w$ & $f$ & $f$ & $w$ \\
+    $f$ & $w$ & $f$ & $f$ & $w$ & $w$ & $w$ & $f$ & $f$ & $f$ \\
+    $f$ & $f$ & $w$ & $f$ & $w$ & $f$ & $w$ & $f$ & $f$ & $w$ \\
+    $f$ & $f$ & $f$ & $f$ & $w$ & $f$ & $w$ & $f$ & $f$ & $f$ \\ \hline
+      &   &   & 0.& 1.& 0.& 2.& 0.& 1.& 0.\\
+  \end{tabular}
+  \caption{Beispiel Auswertung Wahrheitstafel}
+  \label{tbl:Beispiel Auswertung Wahrheitstafel}
+\end{center} 
+\end{table}
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Anmerkung]
+Die zusammengesetzte Aussage wurde schrittweise gelöst. In der untersten 
+Zeile steht, in welcher Reihenfolge die Teilaussagen gelöst wurden. Dabei 
+steht \enquote{0.} für die einfache Übertragung der Basiswerte. Gleiche 
+Zahlenwerte in der letzten Zeile bedeuten, dass die Ergebnisse auf dieser 
+Ebene in beliebiger Reihenfolge gebildet werden können.
+
+Die Erstellung von Wahrheitstafeln für Aussagen kann auch mit Hilfe eines
+Tabellenkalkulationsprogramms erstellt werden. Diese Programme bieten 
+logische Funktionen und Ausdrücke. Auch moderne Programmiersprachen bieten
+Konstrukte für die Bearbeitung von logischen Ausdrücken.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition logisch Äquivalent]
+Zwei zusammengesetzt Aussagen können unterschiedlich aufgebaut sein
+(unterschiedliche Syntax) jedoch die selbe Bedeutung (gleiche Semantik) 
+haben.
+
+\begin{Definition}
+Zwei Aussagen $A_1$ und $A_2$ heißen \Begriff{logisch Äquivalent} 
+$A_1 \equiv A_2$, wenn Sie für jede Belegung der Aussagen mit 
+Wahrheitswerten den selben Wahrheitswert haben.
+\end{Definition}
+\Translation{logisch äquivalent}{logical equivalent}
+
+Statt $\equiv$ wird auch manchmal $\Leftrightarrow$ geschrieben.
+\end{Unit}
+
+%% =============================================================================
+\subsection*{1-stellige Verknüpfungen}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition 1-stellige Verknüpfungen]
+Es sei $A$ eine Aussage, dann gibt es vier 1-stelligen Verknüpfungen. Das 
+heißt, es gibt vier Möglichkeiten, wie die Wahrheitswerte in Abhängigkeit 
+des Wahrheitswertes von $A$ verteilt sein können. In der Tabelle 
+\ref{tbl:Liste 1-stellige Verknüpfungen} werden die möglichen 
+1-stelligen Verknüpfungen dargestellt:
+
+\begin{table}[htbp]
+\begin{center}
+  \begin{tabular}{c||c|c|c|c}
+      & $V_1$ & $V_2$ & $V_3$  & $V_4$ \\
+    $A$ & $true$  & $id(A)$ & $\neg A$ & $false$ \\  \hline
+    $w$ & $w$     & $w$     & $f$      & $f$     \\
+    $f$ & $w$     & $f$     & $w$      & $f$     \\
+  \end{tabular}
+  \caption{Liste 1-stellige Verknüpfungen}
+  \label{tbl:Liste 1-stellige Verknüpfungen}
+\end{center} 
+\end{table}
+
+In dieser Wahrheitstafel sind in der ersten beiden Zeilen die Aussagen oder
+einstelligen Verknüpfungen aufgeführt, in den beiden nachfolgenden Zeilen 
+die möglichen Verteilungen der Wahrheitswerte von $V_i(A)$, für 
+$i = 1, 2, 3, 4$ bei gegebenem Wahrheitswert der Aussage $A$. In der zweiten 
+Zeile stehen die kurzen Bezeichnungen der Verknüpfung. Die Bezeichnungen 
+dieser Verknüpfungen sind in der Literatur allerdings nicht einheitlich.
+
+Die Verknüpfungen $\Begriff{true}(A)$ und $\Begriff{false}(A)$ sind 
+unabhängig vom Wahrheitswert von $A$ stets $wahr$ beziehungsweise $falsch$. 
+Die Verknüpfung $\Begriff{id}(A)$ ist die \Begriff{Identität} von $A$, so 
+dass als einzige nicht-triviale 1-stellige Verknüpfung die \Begriff{Negation} 
+$\neg A$ bleibt.
+\end{Unit}
+\Translation{Idendität}{identity}
+\Translation{Negation}{negation}
+
+%% =============================================================================
+\subsection*{2-stellige Verknüpfungen}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition 2-stellige Verknüpfungen]
+Nun werden die 2-stelligen Verknüpfungen untersucht. Einige dieser 
+Verknüpfungen haben besondere Namen und sind (insbesondere in der Informatik)
+bedeutend. Vier Verknüpfungen wurden oben bereits definiert: Konjunktion,
+Disjunktion, Implikation und Äquivalenz. Jetzt werden alle Möglichkeiten 
+untersucht.
+
+Zweistellige Verknüpfungen gibt es insgesamt 16, die in den Tabellen 
+\ref{tbl:Liste 2-stellige Verknüpfungen} vollständig aufgeführt sind. In der 
+Tabelle stehen die Wahrheitswerte von $V_i(A,B)$ für $i = 1, 2, \ldots, 16$ in
+Abhängigkeit der Wahrheitswerte von $A$ und $B$. \vspace{1ex}
+
+\begin{table}[htbp] 
+\begin{center}
+\begin{tabular}{c|c||c|c|c|c|c|c|c|c}
+ & & \hspace*{1.00cm} & \hspace*{1.00cm} & \hspace*{1.00cm} &   
+  \hspace*{1.00cm} & \hspace*{1.00cm} & \hspace*{1.00cm} & 
+  \hspace*{1.00cm} & \hspace*{1.00cm} \\
+ & & $V_1$ & $V_2$ & $V_3$ & $V_4$ & $V_5$ & $V_6$ & $V_7$ & $V_8$ \\
+ $A$ & $B$ & $true$ & $\lor$ &  & $id(A)$ & $\rightarrow$ 
+   & $id(B)$ & $\leftrightarrow$ & $\land$ \\ \hline
+  $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ & $w$ \\
+  $w$ & $f$ & $w$ & $w$ & $w$ & $w$ & $f$ & $f$ & $f$ & $f$ \\
+  $f$ & $w$ & $w$ & $w$ & $f$ & $f$ & $w$ & $w$ & $f$ & $f$ \\
+  $f$ & $f$ & $w$ & $f$ & $w$ & $f$ & $w$ & $f$ & $w$ & $f$ \\
+\end{tabular}
+
+\vspace*{1.0ex}
+
+\begin{tabular}{c|c||c|c|c|c|c|c|c|c}
+ & & \hspace*{1.00cm} & \hspace*{1.00cm} & \hspace*{1.00cm} & 
+  \hspace*{1.00cm} & \hspace*{1.00cm} & \hspace*{1.00cm} & 
+  \hspace*{1.00cm} & \hspace*{1.00cm} \\
+ & & $ V_9$ & $V_{10}$ & $V_{11}$ & $V_{12}$ & $V_{13}$ & $V_{14}$ & 
+   $V_{15}$ & $V_{16}$ \\
+$A$ & $B$ & $\lnand$ & $\lxor$ & $\neg B$ & & $\neg A$ & & $\lnor$ & $false$ \\
+  \hline
+  $w$  & $w$  & $f$  & $f$  & $f$  & $f$  & $f$  & $f$  & $f$  & $f$ \\
+  $w$  & $f$  & $w$  & $w$  & $w$  & $w$  & $f$  & $f$  & $f$  & $f$ \\
+  $f$  & $w$  & $w$  & $w$  & $f$  & $f$  & $w$  & $w$  & $f$  & $f$ \\
+  $f$  & $f$  & $w$  & $f$  & $w$  & $f$  & $w$  & $f$  & $w$  & $f$ \\
+\end{tabular}
+  \caption{Liste 2-stellige Verknüpfungen}
+  \label{tbl:Liste 2-stellige Verknüpfungen}
+\end{center} 
+\end{table}
+
+Aus der Wahrheitstafel ist zu erkennen, dass die Verknüpfungen aus dem 
+zweiten Teil aus der Negation der Verknüpfungen aus dem ersten Teil 
+entstehen. Es gilt $V_i(A,B) = \neg(V_{17-i}(A,B))$ für 
+$i = 1, \ldots, 16$.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Bemerkung]
+Die Verknüpfung $V_3$ setzt sich zusammen aus $A \lor \neg B$ oder aber 
+$B \rightarrow A$. Die Verknüpfungen $V_1$, $V_4$, $V_6$ und $V_{16}$ sind 
+trivial, so dass sich alle 2-stelligen Verknüpfungen auf die fünf 
+Verknüpfungen $\neg$, $\lor$, $\land$, $\rightarrow$ und $\leftrightarrow$
+zurückführen lassen. Daraus ergibt sich die
+
+\begin{Bemerkung}
+Die 2-stelligen Verknüpfungen lassen sich alle allein mit Hilfe der 
+Junktoren darstellen.
+\end{Bemerkung}
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Bemerkung]
+\label{bem:Aus-FolgerungVereinfachen}
+Darüber hinaus lassen sich die Verknüpfungen \enquote{$\rightarrow$}\ und 
+\enquote{$\leftrightarrow$} allein mit Hilfe der Verknüpfungen 
+\enquote{$\neg$}, \enquote{$\lor$} und \enquote{$\land$} darstellen, denn es 
+gilt: 
+
+\begin{Bemerkung} 
+Es seien $A$ und $B$ beliebige Aussagen dann gelten
+\begin{align}
+  (A \leftrightarrow B) \equiv (A \rightarrow B) \land 
+  (B \rightarrow A) \\
+  (A \rightarrow B) \equiv \neg A \lor B \quad .
+\end{align}
+\end{Bemerkung}
+
+Dies kann leicht mit Hilfe der Wahrheitstafel bewiesen werden.
+
+Die zusammengesetzten Aussagen $A \rightarrow B$ und $\neg A \lor B$ sind
+syntaktisch, also formal, unterschiedlichen, jedoch semantisch, von der 
+Bedeutung her, identisch, also logisch äquivalent.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Bemerkung]
+Damit ergibt sich sogar die
+
+\begin{Bemerkung}
+Die 2-stelligen Verknüpfungen lassen sich alle allein mit Hilfe der 
+Verknüpfungen \enquote{$\neg$}, \enquote{$\lor$} und \enquote{$\land$} 
+darstellen.
+\end{Bemerkung}
+
+Dies ist auch der Grund, wieso in einigen Programmiersprachen, zum Beispiel 
+in \emph{Java} oder in \emph{Python}, und in Tabellenkalkulationsprogrammen 
+oftmals nur die logischen Operatoren \enquote{$\neg$}, \enquote{$\lor$} und
+\enquote{$\land$} realisiert sind.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition $nand$, $nor$, $xor$]
+Einige Verknüpfungen aus der obigen Tabelle 
+\ref{tbl:Liste 2-stellige Verknüpfungen} haben einen besonderen Namen, die 
+in der Tabelle auch bereits eingetragen sind.
+
+\begin{itemize}
+
+\item \Begriff{$\lnand$} (nicht und; nicht zugleich; 
+\textbf{$nand$}\index{nand}), \\
+  $A \lnand B \equiv \neg (A \land B)$, 
+
+\item \Begriff{$\lnor$} (nicht oder; weder noch; \textbf{$nor$}\index{nor}), 
+  \\
+  $A \lnor B \equiv \neg (A \lor B)$, 
+    
+\item \Begriff{$\lxor$} (exclusive or; exklusives oder; entweder oder; 
+  \textbf{$xor$}\index{xor}), \\
+  $A \lxor B \equiv \neg (A \leftrightarrow B)$ .
+\end{itemize}
+
+Das \enquote{exklusiv oder} ist oftmals das oder, das umgangssprachlich 
+verwendet wird.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Bemerkung]
+Die Verknüpfungen haben ihre besondere Bedeutung in der Schaltalgebra, die 
+auf der nachfolgenden Bemerkung beruht.
+
+\begin{Bemerkung}
+Die 2-stelligen Verknüpfungen lassen sich alle allein mit den Verknüpfung 
+\enquote{$\lnor$} beziehungsweise \enquote{$\lnand$} darstellen.
+\end{Bemerkung}
+
+Beweis: Es gelten die nachfolgenden Äquivalenzen, die leicht nachgerechnet 
+werden können. 
+\begin{align}
+  \neg A    &\equiv (A \lnand A) 
+    \equiv (A \lnor A) \\
+    \nonumber \\
+  A \land B &\equiv (A \lnand B) \lnand (A \lnand B) 
+    \equiv (A \lnor A) \lnor (B \lnor B) \\
+    \nonumber \\
+  A \lor B  &\equiv (A \lnand A) \lnand (B \lnand B) 
+    \equiv (A \lnor B) \lnor (A \lnor B) \\ 
+    \nonumber \\
+   A \rightarrow B &\equiv A \lnand (A \lnand B) 
+     \equiv (B \lnor (A \lnor B)) \lnor (B \lnor (A \lnor B))
+\end{align}
+
+Diese Äquivalenzen können beispielsweise mittels Wahrheitstafeln bewiesen 
+werden. Dies wird anhand der ersten Äquivalenz ausgeführt, siehe Tabelle
+\ref{tbl:Beweis not(A) = A nand A = A nor A}.
+ 
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{c||c|c|c}
+  $A$ & $\neg A$ & $A \lnand A$ & $A \lnor A$ \\ \hline
+  $w$ & $f$      & $f$          & $f$       \\
+  $f$ & $w$      & $w$          & $w$       \\
+\end{tabular}
+\caption{Beweis $\neg A \equiv A \lnand A \equiv A \lnor A$}
+\label{tbl:Beweis not(A) = A nand A = A nor A}
+\end{center} 
+\end{table}
+
+Es kann aber auch ohne Wahrheitstafeln bewiesen werden, durch äquivalente
+Umformungen.
+
+\begin{align*}
+  (A \lnand B) \lnand (A \lnand B) \equiv \neg (A \lnand B)
+  \equiv \neg (\neg (A \land B)) \equiv A \land B
+\end{align*}
+
+Die Ausführung des Beweises der restlichen Äquivalenzen kann als einfache 
+Übung durchgeführt werden.
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+%% Abschnitt: Aussagenlogik
+%%------------------------------------------------------------------------------
+%%
+\section{Aussagenlogik}
+\label{sec:ElemLogik-Aussagenlogik}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Tautologie, Kontradiktion]
+Der Wahrheitswert einer aussagenlogischen Formel lässt sich eindeutig aus den
+Wahrheitswerten der Teilaussagen ermitteln. Wenn $A$ eine beliebige Aussage 
+ist, dann ist die Verknüpfung $A \lor \neg A$ stets wahr, während die 
+Verknüpfung $A \land \neg A$ stets falsch ist, unabhängig vom Wahrheitswert 
+von $A$. Dies führt zur nachfolgenden Definition.
+
+\begin{Definition}
+Eine aussagenlogische Formel heißt eine \Begriff{Tautologie}, wenn sie stets 
+eine wahre Aussage ist. Eine aussagenlogische Formel heißt eine
+\Begriff{Kontradiktion}, wenn sie stets eine falsche Aussage ist.
+
+Ein aussagenlogische Formel heißt \Begriff{erfüllbar}, wenn es mindestens 
+eine Belegung mit Wahrheitswerten gibt, so dass die Aussage wahr ist. 
+\end{Definition}
+\Translation{Tautologie}{tautology}
+\Translation{Kontradiktion}{contradiction}
+\Translation{erfüllbar}{satisfiable}
+
+Allgemein gültige Aussage (Tautologien) heißen auch Sätze der Aussagenlogik. 
+Sie bilden die Basis für die mathematische Logik und das Beweisen. Im 
+Nachfolgenden werden einige Tautologien aufgestellt und beweisen.
+
+Die Frage, ob eine Formel erfüllbar ist, ist ein tiefgehendes Problem der
+(theoretischen) Informatik, das Erfüllbarkeitsproblem der Aussagenlogik.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz vom ausgeschlossenen Dritten]
+Es kann nur eine Aussage $A$ oder die Negation von $A$ gelten, nichts 
+anderes. 
+
+\begin{Satz}
+Es sei $A$ eine Aussage. Dann ist 
+\begin{align}
+  A \lor \neg A
+\end{align}
+eine Tautologie, der \Begriff{Satz vom ausgeschlossenen Dritten}.
+\end{Satz}
+\Translation{Satz vom ausgeschlossenen Dritten}{law of excluded middle}
+
+Der Beweis kann mit Hilfe einer Wahrheitstafel (siehe Tabelle 
+\ref{tbl:Beweis Satz vom ausgeschlossenen Dritten}) erbracht werden.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{c||c|c|c}
+  $A$ & $A$  & $\lor$ & $\neg A$ \\  \hline
+  $w$ & $w$  & $w$  & $f$      \\
+  $f$ & $f$  & $w$  & $w$      \\  \hline
+    & 0. & 2. & 1.     \\
+\end{tabular}
+\caption{Beweis Satz vom ausgeschlossenen Dritten}
+\label{tbl:Beweis Satz vom ausgeschlossenen Dritten}
+\end{center}
+\end{table} 
+\qed
+
+Somit gibt es bei der zweiwertigen Logik, die hier betrachtet wird, nur die 
+Werte $wahr$ und $falsch$.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz vom Widerspruch]
+\label{satz:Aus-SatzVomWiderspruch}
+Es kann nicht gleichzeitig eine Aussage $A$ und die Negation davon wahr sein. 
+
+\begin{Satz}[\Begriff{Satz vom Widerspruch}] 
+Es sei $A$ eine Aussage. Dann ist
+\begin{align}
+  \neg (A \land \neg A)
+\end{align}
+eine Tautologie, der \Begriff{Satz vom Widerspruch}. 
+\end{Satz}
+\Translation{Satz vom Widerspruch}{law of noncontradiction}
+
+Die Aussage $( A \land \neg A)$ ist eine Kontradiktion. Dies bedeutet, dass 
+eine Aussage nicht gleichzeitig $wahr$ und $falsch$ sein kann.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz - Assoziativ-, Kommutativ- und Distributivgesetz]
+Aus dem Rechnen mit Zahlen sind die Assoziativ-, Kommutativ- und 
+Distributivgesetze bekannt. Entsprechende Regeln gibt es auch für Aussagen.
+
+\begin{Satz}
+Es seien $A$, $B$ und $C$ Aussagen. Es gelten das 
+\Begriff{Assoziativgesetz}
+\begin{align}
+  (A \land  B) \land C \leftrightarrow A \land (B \land C) \\
+  (A \lor B) \lor C \leftrightarrow A \lor (B \lor C)
+\end{align}
+, das \Begriff{Kommutativgesetz}
+\begin{align}
+  A \land B \leftrightarrow B \land A \\
+  A \lor B \leftrightarrow B \lor A
+\end{align}
+und das \Begriff{Distributivgesetz}
+\begin{align}
+  A \land (B \lor C) \leftrightarrow (A \land B) \lor (A \land C) \\
+  A \lor (B \land C) \leftrightarrow (A \lor B) \land (A \lor C) .
+\end{align}
+\end{Satz}
+\Translation{Assoziativgesetz}{associative property}
+\Translation{Kommutativgesetz}{commutative property}
+\Translation{Distributivgesetz}{distributive property}
+
+Das Assoziativgesetz ermöglicht es, einfach $A \land B \land C$ 
+beziehungsweise $A \lor B \lor C$ zu schreiben, ohne dass Klammern 
+gesetzt werden müssen. Dies erleichtert oftmals die Schreibarbeit. Das 
+Assoziativgesetz gilt auch für mehr als drei Aussagen. Diese drei Gesetze 
+erinnern stark an die entsprechenden Gesetze bei der Arithmetik mit 
+\enquote{$+$}\ und \enquote{$\cdot$}, doch beim Distributivgesetz ist 
+zu sehen, dass es Unterschiede gibt.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz von der doppelte Negation]
+Die Negation der Negation ist wieder die ursprüngliche Aussage. 
+
+\begin{Satz}
+Es sei $A$ eine Aussage, dann ist
+\begin{align} 
+  \neg (\neg (A)) \leftrightarrow A
+\end{align}
+eine Tautologie, der \Begriff{Satz von der doppelten Negationg}. 
+\end{Satz}
+\Translation{Satz von der doppelten Negation}{double negation elimination}
+
+Die doppelte Negation einer Aussage hebt sich gegenseitig auf.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Regeln von de Morgan]
+Wie verhalten sich die Negation mit der Konjunktion und Disjunktion. 
+
+\begin{Satz}
+Es seien $A$ und $B$ Aussagen, dann gelten die \Begriff{Regeln von de Morgan}
+\begin{align}
+  (a)\ \neg (A \land B) \leftrightarrow \neg A \lor \neg B \\
+  (b)\ \neg (A \lor B) \leftrightarrow \neg A \land \neg B
+\end{align}
+\end{Satz}
+
+Die Negation einer $and$-Verknüpfung ist die $or$-Verknüpfung der Negationen 
+der Aussagen. Ebenso ist die Negation einer $or$-Verknüpfung die 
+$and$-Verknüpfung der Negationen. Dies sind die Regeln von de 
+Morgan\index[names]{Morgan, Augustus de}.
+\footnote{Augustus de Morgan (1806 - 1871), englischer Mathematiker
+(\url{https://de.wikipedia.org/wiki/Augustus_De_Morgan})}
+
+Beweis: Es wird $\neg(A \land B) \leftrightarrow (\neg(A) \lor \neg(B))$
+mit Hilfe einer Wahrheitstafel (siehe 
+\ref{tbl:Beweis Regel von de Morgan}) bewiesen.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{c|c||c|c|c|c|c|c}
+  $A$ &   $B$ & $\neg$ & $(A \land B)$ & $\leftrightarrow $ & $\neg A$ & 
+    $\lor$ & $\neg B$ \\ 
+    \hline
+  $w$ &   $w$ & $f$   &   $w$  & $w$  &   $f$  & $f$  &   $f$  \\
+  $w$ &   $f$ & $w$   &   $f$  & $w$  &   $f$  & $w$  &   $w$  \\
+  $f$ &   $w$ & $w$   &   $f$  & $w$  &   $w$  & $w$  &   $f$  \\
+  $f$ &   $f$ & $w$   &   $f$  & $w$  &   $w$  & $w$  &   $w$  \\  \hline
+    &   &   2.  & 1. & 3. & 1. & 2. & 1. \\
+\end{tabular}
+\caption{Beweis Regel von de Morgan}
+\label{tbl:Beweis Regel von de Morgan}
+\end{center}
+\end{table}
+
+Durch ersetzen von $A$ durch $\neg A$ und $B$ durch $\neg B$ in der obigen
+Äquivalenz, ergibt sich, dabei hilft auch der Satz von der doppelten 
+Verneinung,
+\begin{align}
+  \neg(\neg A \land \neg B) \equiv (\neg(\neg A) \lor \neg(\neg B)) 
+  \equiv A \lor B \ .
+\end{align}
+Negation auf beiden Seiten und nochmalige Anwendung des Satzes der 
+doppelten Verneinung ergibt die zweite Regel von de Morgan. 
+
+\begin{tabular}{cll}
+  & $\neg(A \lor B)$ & \\
+  $\equiv$ & & (doppelte Verneinung) \\
+  & $\neg(\neg(\neg A) \lor \neg(\neg B))$ & \\
+  $\equiv$ & & (Regel von de Morgan, a) \\
+  & $\neg(\neg(\neg A \land \neg B))$ & \\
+  $\equiv$ & & (doppelte Verneinung) \\
+  & $\neg A \land \neg B$ & \\
+\end{tabular}
+
+\qed
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Sätze für Beweisverfahren]
+Im nachfolgenden werde einige Sätze der Aussagenlogik vorgestellt, die bei 
+den Beweisverfahren immer wieder die Grundlage bilden.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Kontraposition]
+Wenn aus einer Aussage $A$ die Aussage $B$ folgt, dann ist das äquivalent zu
+der Folgerung von nicht $B$ (also Aussage $B$ gilt nicht) zu nicht $A$.
+
+\begin{Satz} Es seien $A$ und $B$ beliebige Aussagen, dann gilt die
+\Begriff{Kontrapositions} 
+\begin{align}
+  (A \rightarrow B) \leftrightarrow (\neg B \rightarrow \neg A) \ .
+\end{align}
+\end{Satz}
+\Translation{Kontrapositions}{contraposition}
+
+Wenn die Folgerung \enquote{aus $A$ folgt $B$} bewiesen werden soll, dann 
+kann dafür auch die Folgerung \enquote{aus nicht $B$ folgt nicht $A$} 
+bewiesen werden.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz - Abtrennungsregel]
+Es wird der Zusammenhang zwischen der Folgerung \enquote{$A \rightarrow B$} 
+und der Aussage $A$ betrachtet.
+
+\begin{Satz} Es seien $A$ und $B$ beliebige Aussagen, dann gilt der 
+\Begriff{Satz zum modus ponens} oder die \Begriff{Abtrennungsregel}
+\begin{align}
+  ((A \rightarrow B) \land A) \rightarrow B \ .
+\end{align}
+\end{Satz}
+\Translation{Abtrennungsregel}{modus ponens}
+
+Wenn die Folgerung \enquote{aus $A$ folgt $B$} wahr ist und die Aussage $A$ 
+wahr ist, dann ist auch die Aussage $B$ wahr.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz zum modus tollens]
+Es wird der Zusammenhang zwischen der Folgerung \enquote{$A \rightarrow B$} 
+und der Aussage $B$ betrachtet.
+
+\begin{Satz} Es seien $A$ und $B$ beliebige Aussagen, dann gilt der 
+\Begriff{Satz zum modus tollens} 
+\begin{align}
+  (A \rightarrow B) \land \neg B \rightarrow \neg A \ .
+\end{align}
+\end{Satz}
+\Translation{Satz zum modus tollens}{modus tollens}
+
+Wenn die Folgerung \enquote{aus $A$ folgt $B$} wahr ist und die Aussage $B$ 
+nicht wahr ist, dann ist auch die Aussage $A$ nicht wahr. Wäre die Aussage 
+$A$ wahr, dann wäre nach der Abtrennungsregel die Aussage $B$ wahr.
+
+Beweis: 
+Der Beweis ist als Wahrheitstabelle in der Tabelle \ref{tbl:Beweis Satz zum
+modus tollens} zu sehen.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{c|c||c|c|c|c|c|c}
+  $A$ &   $B$ & $(A \rightarrow B)$ & $\land$ & $\neg B$ & $\rightarrow$ 
+    & $\neg A$ \\ \hline
+  $w$ &   $w$ & $w$   &   $f$  & $f$  & $w$  &  $f$  \\
+  $w$ &   $f$ & $f$   &   $f$  & $w$  & $w$  &  $f$  \\
+  $f$ &   $w$ & $w$   &   $f$  & $f$  & $w$  &  $w$  \\
+  $f$ &   $f$ & $w$   &   $w$  & $w$  & $w$  &  $w$  \\  \hline
+    &   &   1.  & 2. & 1. & 3. & 1. \\
+\end{tabular}
+\caption{Beweis Satz zum modus tollens}
+\label{tbl:Beweis Satz zum modus tollens}
+\end{center}
+\end{table} 
+
+Der Beweis kann jedoch auch ohne Wahrheitstafel, durch äquivalente 
+Umformungen erfolgen.
+
+\begin{tabular}{c l l}
+    & $(A \rightarrow B) \land \neg B$ & \\
+  $\equiv$ &  & (siehe Bemerkung \ref{bem:Aus-FolgerungVereinfachen}) \\
+   & $(\neg A \lor\ B) \land \neg B$ \\
+  $\equiv$ &  & Distributivgesetz \\
+   & $(\neg A \land \neg B) \lor (B \land \neg B)$ &  \\
+  $\equiv$ &  & (Satz \ref{satz:Aus-SatzVomWiderspruch} vom Widerspruch) \\
+   & $(\neg A \land \neg B) \lor false$ &  \\
+  $\equiv$ &  &  (siehe Bemerkung \ref{bem:Aus-FolgerungVereinfachen}) \\
+   & $\neg A \land \neg B$ &  \\
+  $\Rightarrow$ &  &  \\
+   & $\neg A$ &  \\
+\end{tabular}
+
+Beim letzten Schritt keine Äquivalenz sondern nur eine Folgerung!
+\qed 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz - Kettenschlussregel] 
+Was ist, wenn es mehrere Folgerungen gibt?
+
+\begin{Satz} Es seien $A$, $B$ und $C$ beliebige Aussagen, dann gilt der 
+\Begriff{Satz zum modus barbara} oder die \Begriff{Kettenschlussregel}
+\begin{align}
+  [(A \rightarrow B) \land (B \rightarrow C)] \rightarrow (A \rightarrow C) 
+  \ .
+\end{align}
+\end{Satz}
+\Translation{Kettenschluss}{chain inference}
+\Translation{modus barbara}{modus barbara}
+
+Wenn die Folgerung \enquote{aus $A$ folgt $B$} wahr ist und auch die 
+Folgerung \enquote{aus $B$ folgt $C$} wahr ist, dann ist auch die 
+Folgerung \enquote{aus $A$ folgt $C$} eine wahre Aussage.
+
+\end{Unit}
+
+%%------------------------------------------------------------------------------
+%% Abschnitt: Prädikatenlogik
+%%------------------------------------------------------------------------------
+%%
+\section{Prädikate}
+\label{sec:ElemLogik-Praedikate}
+
+%% =============================================================================
+%\subsection*{Aussageformen}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+\label{bsp:ausPraedikate}
+Es gibt Formulierungen, denen kein Wahrheitswert direkt zugeordnet werden 
+kann. Die nachfolgenden Sätze sind keine Aussage.
+
+\begin{itemize}
+\item $P(x)$ := \enquote{$x$ ist eine Primzahl.} 
+\item $T(x, y)$ := \enquote{$x$ ist ein Teiler von $y$.} 
+\item $S(x, y, z)$ := \enquote{$x$ ist die Summe von $y$ und $z$}
+\end{itemize}
+
+Wenn jedoch für die Platzhalter $x$, $y$ oder $z$ konkrete Werte aus einem
+Grundbereich von Werten einsetzt werden, dann ergeben sich hieraus Aussagen, 
+denen ein Wahrheitswert zuordnen werden kann.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition Variable, Aussageform] Die Beispiele führen zur
+nachfolgenden Definition.
+
+\begin{Definition}
+Eine \Begriff{Variable} über einem Grundbereich ist ein Symbol, für das 
+spezielle Objekte eines Grundbereichs eingesetzt werden können. Eine mit 
+Hilfe mindestens einer Variablen ausgedrückte Formulierung heißt
+\Begriff{Aussageform} oder \Begriff{Prädikat}, wenn beim Einsetzen von 
+bestimmten Objekten des Grundbereichs für die Variable(n) eine Aussage 
+entsteht.
+\end{Definition}
+\Translation{Variable}{quantified variables}
+\Translation{Aussageform}{propositional formula}
+\Translation{Prädikat}{predicate}
+\Translation{Prädikatenlogik}{first-order logic}
+
+Der Grundbereich wird manchmal auch \Begriff{Universium} genannt.
+\Translation{Universum}{universe}
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Für die Aussageformen in Beispiel \ref{bsp:ausPraedikate} gelten, wenn 
+konkrete Werte eingesetzt werden:
+\begin{itemize}
+  \item $w(P(3)) = w$; $w(P(4)) = f$; $w(P(5)) = w$
+  \item $w(T(2,3)) = f$; $w(T(2,4)) = w$
+  \item $w(S(5,2,3)) = w$
+\end{itemize}
+
+Durch die Einsetzung von konkreten Werten aus dem Grundbereich in die 
+Aussageformen werden konkrete Aussagen gebildet, für die jeweils ein 
+Wahrheitswert bestimmbar ist.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+In Programmiersprachen gibt es den primitiven Datentyp Wahrheitswert
+(\textbf{\texttt{bool}}, \textbf{\texttt{boolean}} mit den beiden möglichen 
+Werte \enquote{\textbf{\texttt{true}}} und \enquote{\textbf{\texttt{false}}} 
+oder \enquote{\textbf{\texttt{True}}} und \enquote{\textbf{\texttt{False}}}. 
+Dies ist eine Darstellung der Wahrheitswerte. Eine Aussage ist dann einfach 
+eine boolesche Variable. Bei der Programmierung gibt es viele Aussageformen. 
+Jede Methode mit einem Wahrheitswert als Rückgabewert ist Aussageform:
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Anmerkung]
+Für die Formulierung mathematischer Theorien reicht die Aussagenlogik noch 
+nicht aus. In der Aussagenlogik werden Aussagen betrachtet. In der 
+Prädikatenlogik werden Prädikate oder Aussageformen betrachtet.
+
+Bei der weiteren Analyse von Aussagen stößt werden Subjekte, Prädikate und
+sogenannte quantifizierbare Redeteile wie \enquote{für alle}\ und 
+\enquote{es gibt} betrachtet. Subjekte sind Namen für Dinge aus einer 
+bestimmten vorgegebenen Individualmenge, Prädikate sind Namen für 
+Relationen\footnote{Relationen werden erst später genauer betrachtet} auf 
+dieser Individualmenge. 1-stellige Prädikate heißen Eigenschaften. Weiter 
+werden die Quantoren \enquote{$\forall$} (\enquote{für alle} oder 
+Generalisator) und \enquote{$\exists$} (\enquote{es gibt} oder 
+Partikularisator) eingeführt. Darüber hinaus gibt es noch das
+Gleichheitszeichen \enquote{=} und Vergleichsoptionen \enquote{<} und 
+\enquote{>}, um Identitäten darstellen zu können. Weiter werden noch 
+Funktionen\footnote{Funktionen werden erst später genauer betrachtet} 
+(in $n$ Variablen) eingeführt, die jedoch genau genommen nur 
+(($n+1$)-stellige)  Relationen sind. Damit sind Elemente der
+\Begriff{Prädikatenlogik} der  1. Stufe mit Identität eingeführt. 
+Damit können mathematische Aussagen formulieren werden. Dies und die 
+Erweiterung in höhere Stufen wird hier nicht weiter ausgeführt. 
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Definition All-Quantor, Existenz-Quantor]
+Generalisator und Partikularisator werden wie folgt definiert.
+
+\begin{Definition}
+Es sei $A(x)$ eine Aussageform mit einer Variablen $x$ in einem Universum $U$. 
+
+\begin{itemize}
+\item
+Die \Begriff{All-Aussage}
+\begin{align}
+  \left( \forall x \in U \right) : \left[ A(x) \right]
+\end{align}
+ist genau dann wahr, wenn es für jedes $x$ aus $U$ die Aussage $A(x)$ 
+wahr ist. Das Symbol $\forall$ heißt \Begriff{All-Quantor} und wird 
+\enquote{für alle} gelesen.
+\item
+Die \Begriff{Existenz-Aussage}
+\begin{align}
+  \left( \exists x \in U \right) : \left[ A(x) \right]
+\end{align}
+ist genau dann wahr, wenn es (mindestens) ein $x \in U$ gibt, so dass die 
+Aussage $A(x)$ wahr ist. Das Symbol $\exists$ heißt 
+\Begriff{Existenz-Quantor} und wird \enquote{es gibt} gelesen.
+\end{itemize}
+\end{Definition}
+\Translation{All-Aussage}{universal quantification}
+\Translation{Existenz-Aussage}{existential quantification}
+
+Beim Existenz-Quantor muss es mindestens ein $x \in U$ geben. Es können auch 
+viele existieren. Durch Ergänzungen der Form $\exists^n$, $\exists^{\geq n}$, 
+$\exists^{\leq n}$ oder $\exists^{n \ldots m}$ kann ausgedrückt werden, dass 
+genau $n$, mindestens $n$, höchstens $n$ oder zwischen $n$ und $m$ (inklusive 
+der Grenzen) Elemente mit einer Eigenschaft gibt.
+
+Manchmal wird kurz $\forall x \in U: A(x)$ oder $\exists x \in U: A(x)$ 
+geschrieben, lässt also manche Klammern weg, ohne dass es zu
+Missverständnissen kommt. Wenn das Universum klar ist, dann wird das Universum
+nicht expliziz aufgeführt.
+
+All-Quantoren und Existenz-Quantoren können auch mehrfach hintereinander 
+auftreten.
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Gegeben sei die Aussage \enquote{Es existiert (mindestens) eine Primzahl 
+größer 5 und kleiner 9}. \\
+Sei $P$ das 1-stellige Prädikat (Eigenschaft) \enquote{ist Primzahl}, dann 
+lässt sich die Aussage kurz in mathematischer Schreibweise darstellen als: 
+\begin{align*}
+  \exists n \in \NN :  P(n) \land (5 < n < 9)  \quad .
+\end{align*}
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Beispiel]
+Die Aussage \enquote{Für alle reelle Zahlen $x$ größer 0 existiert 
+(mindestens) eine natürliche Zahl $n$, so dass $1/n$ kleiner $x$ ist} lässt 
+sich in mathematischer Form darstellen als:
+\begin{align*}
+  \forall (x \in \RR^+) : \exists n \in \NN : \frac{1}{n} < x \quad .
+\end{align*}
+\end{Unit}
+
+%% -----------------------------------------------------------------------------
+\begin{Unit}[Satz Verneinung]
+Einfache Aussagen können negiert werden. Auch die All-Aussage und die 
+Existenz-Aussage können verneint werden. 
+
+\begin{Satz} Die All-Aussage und die Existenz-Aussage können verneint werden
+\begin{itemize}
+\item Gegeben sei die All-Aussage $\forall x \in U : A(x)$, \enquote{für 
+alle $x \in U$ gilt $A(x)$}. Dann gilt
+  \begin{align}
+    \neg \left( \forall x \in U \right) : A(x) \equiv \exists x \in U : 
+    \neg A(x) \quad .
+  \end{align}
+  Somit ist die Negation der obigen All-Aussage: \enquote{es existiert ein 
+  $x \in U$, so dass $A(x)$ nicht gilt}.
+\item Gegeben sei die Existenz-Aussage $\exists x \in U : A(x)$, 
+\enquote{es existiert ein $x \in U$, so dass $A(x)$ gilt}. Dann gilt
+  \begin{align}
+    \neg (\exists x \in U) : A(x) \equiv \forall x \in U : \neg A(x) \quad .
+  \end{align}
+  Somit ist die Negation der obigen All-Aussage: \enquote{für alle $x \in U$ 
+  ist die Negation von $A(x)$ wahr}.
+\end{itemize}
+\end{Satz}
+
+Bei mehrfach hintereinander kommen All-Quantoren und Existenz-Quantoren kann 
+die Negation manchmal etwas komplexer sein.
+\end{Unit}
+
+%%------------------------------------------------------------------------------

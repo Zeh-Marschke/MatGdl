@@ -1,0 +1,44 @@
+\newcommand{\AUTOR}{Andreas Zeh-Marschke}
+\newcommand{\AUTORKURZ}{A. Zeh-Marschke}
+\newcommand{\TITEL}{Mathematische Grundlagen}
+\newcommand{\UNTERTITEL}{Grundbegriffe}
+\newcommand{\DATUM}{18.04.2025}
+\newcommand{\VERSION}{0.7-022}
+\newcommand{\IDENT}{MathGdl.tex}
+\newcommand{\BIBLIOTHEK}{BibMathGdl.bib}
+\newcommand{\COPYRIGHT}{2025}
+
+\newcommand{\INDEXNAMEN}{JA}
+\newcommand{\INDEXABKUERZUNGEN}{JA}
+
+\input{config/AZeReport}
+\input{config/AZeCommands}
+
+% Silbentrennung: Trennstelle mit "-" erstellen, Wörter mit Leerzeichen trennen
+\hyphenation{ }
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\begin{document}
+\deckblattBuch
+
+\include{Grundbegriffe/00Vorwort}
+\tableofcontents
+
+\listoffigures
+\listoftables
+%\listoflistings
+
+\include{Grundbegriffe/01Sprache}
+\include{Grundbegriffe/02Aussagen}
+\include{Grundbegriffe/03Beweise}
+\include{Grundbegriffe/04Mengen}
+\include{Grundbegriffe/05Relationen}
+\include{Grundbegriffe/06Abbildungen}
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\printbibliography  %% --- Literaturverzeichnis ---
+\PRINTINDEXES
+
+%\appendix
+%\input{Grundbegriffe/app_A.tex}
+\end{document}

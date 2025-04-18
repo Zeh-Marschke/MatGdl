@@ -1,0 +1,48 @@
+%% =============================================================================
+%% AZeBook
+%% Steuerung für ein Buch mit LaTeX
+%% -----------------------------------------------------------------------------
+%% AZeRahmen, Version 3.0.01 - 2025-01-25
+%% =============================================================================
+\documentclass[ 
+   a4paper               % Papierformat DIN A4
+  ,12pt                  % Schriftgröße (10|11|12)pt
+  ,DIV=12                % Satzspiegel (10pt/8), (11pt,10) (12pt/12)
+  ,twoside=true          %% doppelseitig
+  ,chapterprefix=true,   %% 
+  ,BCOR=5mm              % Bindekorrektur
+  ,headinclude=true      % Kopfzeilen als Textkörper betrachten
+  ,footinclude=true      % Fußzeilen als Textkörper betrachten
+  ,parskip=half          % Einzug halbe Zeile zwischen Absätzen
+  ,toc=listof            % Abbildungs-/Tabellenverz. ins Inhaltsverzeichnis
+  ,index=totoc           % Stichwortverzeichnis ins Inhaltsverzeichnis
+  ,bibliography=totoc    % Literaturverzeichnis ins Inhaltsverzeichnis
+]{scrbook}               % KOMA-Script Buch
+
+\input{./config/AZeBase.tex}
+
+%% --- Kopf- und Fußzeilen -----------------------------------------------------
+\usepackage[
+   draft=false
+  ,headsepline
+  ,footsepline
+  ,plainfootsepline=true
+  ,automark
+]{scrlayer-scrpage}
+\automark[section]{chapter}
+\ohead*{\headmark}
+\chead{ }
+\ihead{ }
+\cfoot*{\DATUM}
+\ifoot*{\IDENT}
+\ofoot*{\pagemark / \pageref{LastPage}}
+\pagestyle{scrheadings}
+
+% mit \printsubindex werden die Indizes nicht auf eine eigene Seite gesetzt
+\newcommand{\PRINTINDEXES}{
+\ifthenelse{\equal{\INDEXNAMEN}{JA}}
+  { \printindex[names] }{ }  
+\ifthenelse{\equal{\INDEXABKUERZUNGEN}{JA}}
+  { \printindex[abbr] }{ }  
+\printindex
+}
