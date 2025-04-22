@@ -15,10 +15,21 @@
 
 \usepackage[amsmath,thmmarks,amsthm,framed]{ntheorem}
 
+% --- 2025-04-20 --- 
+%\usepackage{chngcntr}
+\newtheorem{Aufgabe}{Aufgabe}[chapter]
+\newtheorem{Loesung}{Lösung}[section]
+%\counterwithout{Loesung}{chapter}
+
 % --- Zerlegen in einzelnen Einheiten, wobei die Nummerierung vorne ist
 \theoremstyle{change}
 \theorembodyfont{\normalfont}
 \newtheorem{Unit}{}[section]
+% --- 2025-04-20 --- 
+%\usepackage{chngcntr}
+%\newtheorem{UnitAfg}{Aufgabe}[chapter]
+%\newtheorem{UnitLsg}{Lösung}[section]
+%\counterwithout{UnitLsg}{chapter}
 
 %--- Definition von bunt gerahmten Theormen (ohne Nummern)
 \theoremstyle{nonumberplain}
@@ -33,6 +44,7 @@
 \newshadedtheorem{Bemerkung}{Bemerkung}
 \newshadedtheorem{Korollar}{Korollar}
 \newshadedtheorem{Folgerung}{Folgerung}
+
 
 \usepackage{gauss}            % Symbole für Gauss-Algorithmus
   \def\rowaddtolabel#1{\scriptstyle #1}  %% Faktoren bei Quelle und Ziel

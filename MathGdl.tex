@@ -2,8 +2,8 @@
 \newcommand{\AUTORKURZ}{A. Zeh-Marschke}
 \newcommand{\TITEL}{Mathematische Grundlagen}
 \newcommand{\UNTERTITEL}{Grundbegriffe}
-\newcommand{\DATUM}{18.04.2025}
-\newcommand{\VERSION}{0.7-022}
+\newcommand{\DATUM}{21.04.2025}
+\newcommand{\VERSION}{0.8-024}
 \newcommand{\IDENT}{MathGdl.tex}
 \newcommand{\BIBLIOTHEK}{BibMathGdl.bib}
 \newcommand{\COPYRIGHT}{2025}
@@ -27,18 +27,29 @@
 \listoftables
 %\listoflistings
 
-\include{Grundbegriffe/01Sprache}
-\include{Grundbegriffe/02Aussagen}
-\include{Grundbegriffe/03Beweise}
-\include{Grundbegriffe/04Mengen}
-\include{Grundbegriffe/05Relationen}
-\include{Grundbegriffe/06Abbildungen}
+\newcommand{\mitAufgaben}{Ja}
+\newcommand{\mitLoesungen}{Nein}
 
+\include{Grundbegriffe/01Sprache}
+%\include{Grundbegriffe/02Aussagen}
+%\include{Grundbegriffe/03Beweise}
+%\include{Grundbegriffe/04Mengen}
+%\include{Grundbegriffe/05Relationen}
+%\include{Grundbegriffe/06Abbildungen}
+
+\appendix
+%\input{Grundbegriffe/app_A.tex}
+\renewcommand{\mitAufgaben}{Nein}
+\renewcommand{\mitLoesungen}{Ja}
+
+\setcounter{section}{11}
+%\section{Lösungen zu Kapitel \ref{cha:Gdl-K01-Sprache}}
+\chapter{Lösungen zu den Aufgaben}
+\section{Lösungen zu Kapitel \ref{cha:Gdl-K01-Sprache}}
+\input{Grundbegriffe/01SpracheAufgaben}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \printbibliography  %% --- Literaturverzeichnis ---
 \PRINTINDEXES
 
-%\appendix
-%\input{Grundbegriffe/app_A.tex}
 \end{document}
