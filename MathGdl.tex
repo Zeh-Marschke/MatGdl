@@ -2,8 +2,8 @@
 \newcommand{\AUTORKURZ}{A. Zeh-Marschke}
 \newcommand{\TITEL}{Mathematische Grundlagen}
 \newcommand{\UNTERTITEL}{Grundbegriffe}
-\newcommand{\DATUM}{21.04.2025}
-\newcommand{\VERSION}{0.8-024}
+\newcommand{\DATUM}{23.04.2025}
+\newcommand{\VERSION}{0.8-025}
 \newcommand{\IDENT}{MathGdl.tex}
 \newcommand{\BIBLIOTHEK}{BibMathGdl.bib}
 \newcommand{\COPYRIGHT}{2025}
@@ -31,22 +31,27 @@
 \newcommand{\mitLoesungen}{Nein}
 
 \include{Grundbegriffe/01Sprache}
-%\include{Grundbegriffe/02Aussagen}
-%\include{Grundbegriffe/03Beweise}
-%\include{Grundbegriffe/04Mengen}
-%\include{Grundbegriffe/05Relationen}
-%\include{Grundbegriffe/06Abbildungen}
+\include{Grundbegriffe/02Aussagen}
+\include{Grundbegriffe/03Beweise}
+\include{Grundbegriffe/04Mengen}
+\include{Grundbegriffe/05Relationen}
+\include{Grundbegriffe/06Abbildungen}
 
 \appendix
 %\input{Grundbegriffe/app_A.tex}
 \renewcommand{\mitAufgaben}{Nein}
 \renewcommand{\mitLoesungen}{Ja}
 
-\setcounter{section}{11}
+\setcounter{chapter}{11}
 %\section{Lösungen zu Kapitel \ref{cha:Gdl-K01-Sprache}}
 \chapter{Lösungen zu den Aufgaben}
 \section{Lösungen zu Kapitel \ref{cha:Gdl-K01-Sprache}}
-\input{Grundbegriffe/01SpracheAufgaben}
+\include{Grundbegriffe/01SpracheAufgaben}
+%\include{Grundbegriffe/02AussagenAufgaben}
+%\include{Grundbegriffe/03BeweiseAufgaben}
+%\include{Grundbegriffe/04MengenAufgaben}
+%\include{Grundbegriffe/05RelationenAufgaben}
+%\include{Grundbegriffe/06AbbildungenAufgaben}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \printbibliography  %% --- Literaturverzeichnis ---
